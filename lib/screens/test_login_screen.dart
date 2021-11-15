@@ -20,20 +20,6 @@ class _TestLoginScreenState extends State<TestLoginScreen> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/food.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/food.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height / 2,
