@@ -1,9 +1,10 @@
 import 'package:elancer_project_1/widgets/out_boarding_content.dart';
+import 'package:elancer_project_1/widgets/out_boarding_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-// import 'package:ui_store_app/widgets/out_boarding_content.dart';
-// import 'package:ui_store_app/widgets/out_boarding_indicator.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class OutBoardingScreen extends StatefulWidget {
   const OutBoardingScreen({Key? key}) : super(key: key);
@@ -60,11 +61,13 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
           ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: 0,
-              maxWidth: double.infinity,
+              maxWidth: 422.w,
               minHeight: 0,
-              maxHeight: 500,
+              maxHeight: 540.h,
             ),
             child: PageView(
+              // scrollBehavior: ScrollPhysics().,
+              physics: const BouncingScrollPhysics(),
               controller: _pageController,
               scrollDirection: Axis.horizontal,
               onPageChanged: (value) {

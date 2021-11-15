@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: () => MaterialApp(
+        theme: ThemeData(fontFamily: 'Roboto'),
         debugShowCheckedModeBanner: false,
         initialRoute: '/launch_screen',
         routes: {
