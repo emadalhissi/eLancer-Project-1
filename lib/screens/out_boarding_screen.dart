@@ -1,10 +1,10 @@
+import 'package:elancer_project_1/main.dart';
 import 'package:elancer_project_1/widgets/out_boarding_content.dart';
 import 'package:elancer_project_1/widgets/out_boarding_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class OutBoardingScreen extends StatefulWidget {
   const OutBoardingScreen({Key? key}) : super(key: key);
@@ -36,28 +36,6 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Align(
-          //   alignment: AlignmentDirectional.topEnd,
-          //   child: Visibility(
-          //     visible: _currentPage < 2,
-          //     replacement: TextButton(
-          //       onPressed: () =>
-          //           Navigator.pushReplacementNamed(context, '/login_screen'),
-          //       child: Text('START'),
-          //     ),
-          //     child: Align(
-          //       alignment: AlignmentDirectional.topEnd,
-          //       child: TextButton(
-          //         onPressed: () => _pageController.animateToPage(
-          //           2,
-          //           duration: const Duration(seconds: 1),
-          //           curve: Curves.easeInOut,
-          //         ),
-          //         child: Text('SKIP'),
-          //       ),
-          //     ),
-          //   ),
-          // ),
           ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: 0,
@@ -77,87 +55,83 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                   },
                 );
               },
-              children: [
-                OutBoardingContent(imageName: 'ob_1.png'),
-                OutBoardingContent(imageName: 'ob_2.png'),
-                OutBoardingContent(imageName: 'ob_3.png'),
+              children: const [
+                OutBoardingContent(
+                  imageName: 'ob_1.png',
+                  title: 'New Courses',
+                  subTitle: 'Discover All eLancer New Courses',
+                ),
+                OutBoardingContent(
+                  imageName: 'ob_3.png',
+                  title: 'Latest News',
+                  subTitle: 'Find Out eLancer Latest News',
+                ),
+                OutBoardingContent(
+                  imageName: 'ob_2.png',
+                  title: 'Discover More',
+                  subTitle: 'Achievements, Staff & Much More!',
+                ),
               ],
             ),
           ),
+          SizedBox(height: 40.h),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // OutBoardingIndicator(
-              //   marginEnd: 5,
-              //   selected: _currentPage == 0,
-              // ),
-              // OutBoardingIndicator(
-              //   marginEnd: 5,
-              //   selected: _currentPage == 1,
-              // ),
-              // OutBoardingIndicator(
-              //   marginEnd: 5,
-              //   selected: _currentPage == 2,
-              // ),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Visibility(
-                visible: _currentPage > 0,
-                maintainAnimation: true,
-                maintainState: true,
-                maintainSize: true,
-                child: IconButton(
-                  //color: _currentPage == 0 ? Colors.grey : Colors.black,
-                  onPressed: () {
-                    _pageController.previousPage(
-                        duration: const Duration(seconds: 1),
-                        curve: Curves.easeInOut);
-                  },
-                  icon: Icon(Icons.arrow_back_ios),
+              Padding(
+                padding: EdgeInsets.only(left: 39.w, right: 39.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    OutBoardingIndicator(
+                      marginEnd: 9.w,
+                      selected: _currentPage == 0,
+                    ),
+                    OutBoardingIndicator(
+                      marginEnd: 9.w,
+                      selected: _currentPage == 1,
+                    ),
+                    OutBoardingIndicator(
+                      marginEnd: 9.w,
+                      selected: _currentPage == 2,
+                    ),
+                  ],
                 ),
               ),
-              Visibility(
-                visible: _currentPage < 2,
-                maintainAnimation: true,
-                maintainState: true,
-                maintainSize: true,
-                child: IconButton(
-                  //color: _currentPage == 2 ? Colors.grey : Colors.black,
-                  onPressed: () {
-                    _pageController.nextPage(
-                        duration: Duration(seconds: 1),
-                        curve: Curves.easeInOut);
-                  },
-                  icon: Icon(Icons.arrow_forward_ios),
+              ElevatedButton(
+                onPressed: _currentPage == 2
+                    ? () {
+                        Navigator.pushReplacementNamed(
+                            context, '/login_screen');
+                      }
+                    : () {
+                        _pageController.nextPage(
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                child: Text(
+                  _currentPage == 2 ? ' START' : '  NEXT',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Visibility(
-            visible: _currentPage == 2,
-            maintainAnimation: true,
-            maintainState: true,
-            maintainSize: true,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
-              child: ElevatedButton(
-                onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/login_screen'),
-                child: Text('START'),
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  primary: const Color(0xff42C6A5),
+                  minimumSize: Size(99.w, 48.h),
+                  shadowColor: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50.r),
+                      topLeft: Radius.circular(50.r),
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
         ],
       ),
