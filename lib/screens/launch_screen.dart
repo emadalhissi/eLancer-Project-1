@@ -7,11 +7,12 @@ class LaunchScreen extends StatefulWidget {
   _LaunchScreenState createState() => _LaunchScreenState();
 }
 
+
 class _LaunchScreenState extends State<LaunchScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/login_screen');
+      Navigator.pushReplacementNamed(context, '/out_boarding_screen');
     });
     super.initState();
   }

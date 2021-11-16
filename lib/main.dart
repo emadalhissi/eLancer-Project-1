@@ -1,9 +1,14 @@
+import 'package:elancer_project_1/screens/about_developer_screen.dart';
+import 'package:elancer_project_1/screens/about_elancer_screen.dart';
+import 'package:elancer_project_1/screens/achievements_screen.dart';
 import 'package:elancer_project_1/screens/enter_name_sceen.dart';
 import 'package:elancer_project_1/screens/launch_screen.dart';
 import 'package:elancer_project_1/screens/login_sceen.dart';
 import 'package:elancer_project_1/screens/main_screen.dart';
+import 'package:elancer_project_1/screens/out_boarding_screen.dart';
 import 'package:elancer_project_1/screens/register_sceen.dart';
 import 'package:elancer_project_1/screens/select_birth_day_screen.dart';
+import 'package:elancer_project_1/screens/work_staff_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -18,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(375, 812),
+      designSize: const Size(375, 812),
       builder: () => MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: '/launch_screen',
@@ -29,6 +34,11 @@ class MyApp extends StatelessWidget {
           '/register_screen': (context) => const RegisterScreen(),
           '/enter_name_screen': (context) => const EnterNameScreen(),
           '/select_age_screen': (context) => const SelectBirthDayScreen(),
+          '/about_developer_screen': (context) => const AboutDeveloperScreen(),
+          '/about_lancer_screen': (context) => const AboutELancerScreen(),
+          '/achievements_screen': (context) => const AchievementsScreen(),
+          '/work_staff_screen': (context) => const WorkStaffScreen(),
+          '/out_boarding_screen': (context) => const OutBoardingScreen(),
         },
         // localizationsDelegates: [
         //   GlobalMaterialLocalizations.delegate,
@@ -36,11 +46,11 @@ class MyApp extends StatelessWidget {
         //   GlobalWidgetsLocalizations.delegate,
         // ],
         localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: [
+        supportedLocales: const [
           Locale('ar'),
           Locale('en'),
         ],
-        locale: Locale('ar'),
+        locale: const Locale('en'),
       ),
     );
   }

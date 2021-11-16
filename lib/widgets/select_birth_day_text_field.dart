@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SelectBirthDayTextField extends StatefulWidget {
   const SelectBirthDayTextField({
@@ -37,7 +38,7 @@ class _SelectBirthDayTextFieldState extends State<SelectBirthDayTextField> {
       ],
       style: TextStyle(
         color: Colors.grey.shade800,
-        fontSize: 18,
+        fontSize: 16.sp,
         fontWeight: FontWeight.bold,
       ),
       controller: widget.textEditingController,
@@ -53,7 +54,7 @@ class _SelectBirthDayTextFieldState extends State<SelectBirthDayTextField> {
         hintText: widget.hint,
         hintStyle: TextStyle(
           color: Colors.grey,
-          fontSize: 18,
+          fontSize: 16.sp,
           fontWeight: FontWeight.bold,
         ),
         counterText: '',
