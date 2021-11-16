@@ -1,16 +1,19 @@
-import 'package:elancer_project_1/screens/about_developer_screen.dart';
-import 'package:elancer_project_1/screens/about_elancer_screen.dart';
-import 'package:elancer_project_1/screens/achievements_screen.dart';
+import 'package:elancer_project_1/screens/menu_screens/about_developer_screen.dart';
+import 'package:elancer_project_1/screens/bn_screens/about_elancer_screen.dart';
+import 'package:elancer_project_1/screens/bn_screens/achievements_screen.dart';
+import 'package:elancer_project_1/screens/bn_screens/courses_screen.dart';
+import 'package:elancer_project_1/screens/menu_screens/founders_screen.dart';
+import 'package:elancer_project_1/screens/bn_screens/home_screen.dart';
+import 'package:elancer_project_1/screens/bn_screens/menu_screen.dart';
+import 'package:elancer_project_1/screens/menu_screens/work_staff_screen.dart';
 import 'package:elancer_project_1/screens/enter_name_sceen.dart';
 import 'package:elancer_project_1/screens/launch_screen.dart';
 import 'package:elancer_project_1/screens/login_sceen.dart';
 import 'package:elancer_project_1/screens/main_screen.dart';
-import 'package:elancer_project_1/screens/out_boarding_screen.dart';
+import 'package:elancer_project_1/screens/outboarding/out_boarding_screen.dart';
 import 'package:elancer_project_1/screens/register_sceen.dart';
 import 'package:elancer_project_1/screens/select_birth_day_screen.dart';
-import 'package:elancer_project_1/screens/work_staff_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,19 +32,26 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData(fontFamily: 'Roboto'),
           debugShowCheckedModeBanner: false,
-          initialRoute: '/launch_screen',
+          initialRoute: '/main_screen',
           routes: {
+            //----------------------PRIMARY-------------------------------
             '/launch_screen': (context) => const LaunchScreen(),
-            '/main_screen': (context) => const MainScreen(),
+            '/out_boarding_screen': (context) => const OutBoardingScreen(),
             '/login_screen': (context) => const LoginScreen(),
             '/register_screen': (context) => const RegisterScreen(),
             '/enter_name_screen': (context) => const EnterNameScreen(),
             '/select_age_screen': (context) => const SelectBirthDayScreen(),
-            '/about_developer_screen': (context) => const AboutDeveloperScreen(),
-            '/about_lancer_screen': (context) => const AboutELancerScreen(),
+            '/main_screen': (context) => const MainScreen(),
+            //----------------------BN SCREENS-------------------------------
             '/achievements_screen': (context) => const AchievementsScreen(),
+            '/courses_screen': (context) => const CoursesScreen(),
+            '/home_screen': (context) => const HomeScreen(),
+            '/about_lancer_screen': (context) => const AboutELancerScreen(),
+            '/menu_screen': (context) => const MenuScreen(),
+            //----------------------MENU SCREENS-------------------------------
+            '/about_developer_screen': (context) => const AboutDeveloperScreen(),
             '/work_staff_screen': (context) => const WorkStaffScreen(),
-            '/out_boarding_screen': (context) => const OutBoardingScreen(),
+            '/founders_screen': (context) => const FoundersScreen(),
           },
           // localizationsDelegates: [
           //   GlobalMaterialLocalizations.delegate,

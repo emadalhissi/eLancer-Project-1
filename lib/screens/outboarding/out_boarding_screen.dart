@@ -1,6 +1,6 @@
 import 'package:elancer_project_1/main.dart';
-import 'package:elancer_project_1/widgets/out_boarding_content.dart';
-import 'package:elancer_project_1/widgets/out_boarding_indicator.dart';
+import 'package:elancer_project_1/widgets/out%20boarding%20widgets/out_boarding_content.dart';
+import 'package:elancer_project_1/widgets/out%20boarding%20widgets/out_boarding_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
