@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -37,80 +39,89 @@ class _RegisterScreenState extends State<RegisterScreen> {
           Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: const [
               Image(
                 image: AssetImage('images/bg.png'),
               ),
             ],
           ),
           Positioned(
-            height: 310,
+            height: 300.h,
             width: MediaQuery.of(context).size.width,
             child: Center(
               child: Text(
-                'Register',
+                // 'Register',
+                AppLocalizations.of(context)!.registerScreen_screenMainTitle,
                 style: TextStyle(
-                  color: Color(0xff373737),
-                  fontSize: 32,
+                  color: const Color(0xff373737),
+                  fontSize: 30.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 56),
+            padding: EdgeInsets.symmetric(horizontal: 54.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 40),
+                SizedBox(height: 40.h),
                 TextField(
                   controller: _usernameEditingController,
                   onChanged: (value) {
-                    setState(() {
-                      _usernameEditingController;
-                    });
+                    setState(
+                      () {
+                        _usernameEditingController;
+                      },
+                    );
                   },
                   showCursor: false,
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xffE5E5E5),
-                        width: 1,
+                        color: const Color(0xffE5E5E5),
+                        width: 1.w,
                       ),
                     ),
-                    labelText: 'Username',
+                    // labelText: 'Username',
+                    labelText: AppLocalizations.of(context)!
+                        .registerScreen_usernameTextFieldLabel,
                     labelStyle: TextStyle(
-                      color: Color(0xffA1A1A1),
+                      color: const Color(0xffA1A1A1),
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 13.sp,
                     ),
                   ),
                 ),
-                SizedBox(height: 13),
+                SizedBox(height: 13.h),
                 TextField(
                   controller: _emailEditingController,
                   onChanged: (value) {
-                    setState(() {
-                      _emailEditingController;
-                    });
+                    setState(
+                      () {
+                        _emailEditingController;
+                      },
+                    );
                   },
                   showCursor: false,
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xffE5E5E5),
-                        width: 1,
+                        color: const Color(0xffE5E5E5),
+                        width: 1.w,
                       ),
                     ),
-                    labelText: 'Email',
+                    // labelText: 'Email',
+                    labelText: AppLocalizations.of(context)!
+                        .registerScreen_emailTextFieldLabel,
                     labelStyle: TextStyle(
-                      color: Color(0xffA1A1A1),
+                      color: const Color(0xffA1A1A1),
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 13.sp,
                     ),
                   ),
                 ),
-                SizedBox(height: 13),
+                SizedBox(height: 13.h),
                 TextField(
                   controller: _passwordEditingController,
                   onChanged: (value) {
@@ -124,63 +135,79 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xffE5E5E5),
-                        width: 1,
+                        color: const Color(0xffE5E5E5),
+                        width: 1.w,
                       ),
                     ),
-                    labelText: 'Create Password',
+                    // labelText: 'Create Password',
+                    labelText: AppLocalizations.of(context)!
+                        .registerScreen_passwordTextFieldLabel,
                     labelStyle: TextStyle(
-                      color: Color(0xffA1A1A1),
+                      color: const Color(0xffA1A1A1),
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 13.sp,
                     ),
                   ),
                 ),
-                SizedBox(height: 32),
+                SizedBox(height: 32.h),
                 ElevatedButton(
-                  onPressed: runRegisterButton() ? () {
-                    Future.delayed(Duration(milliseconds: 500), () {
-                      Navigator.pushNamed(context, '/enter_name_screen');
-                    });
-                  } : null,
+                  onPressed: runRegisterButton()
+                      ? () {
+                          Future.delayed(
+                            const Duration(milliseconds: 500),
+                            () {
+                              Navigator.pushNamed(
+                                  context, '/enter_name_screen');
+                            },
+                          );
+                        }
+                      : null,
                   child: Text(
-                    'CREATE ACCOUNT',
+                    // 'CREATE ACCOUNT',
+                    AppLocalizations.of(context)!
+                        .registerScreen_createAccountElevatedButtonText,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 50),
-                    primary: Color(0xff42C6A5),
+                    minimumSize: Size(double.infinity, 50.h),
+                    primary: const Color(0xff42C6A5),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(50.r),
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already a User ?',
+                      // 'Already a User ?',
+                      AppLocalizations.of(context)!
+                          .registerScreen_AlreadyAUserQuestion,
                       style: TextStyle(
-                        color: Color(0xff919191),
-                        fontSize: 16,
+                        color: const Color(0xff919191),
+                        fontSize: 14.sp,
                       ),
                     ),
                     TextButton(
                       onPressed: () {
-                        Future.delayed(Duration(milliseconds: 500), () {
+                        Future.delayed(const Duration(milliseconds: 500), () {
                           Navigator.pushReplacementNamed(
-                              context, '/login_screen');
+                            context,
+                            '/login_screen',
+                          );
                         });
                       },
                       child: Text(
-                        'Login',
+                        // 'Login',
+                        AppLocalizations.of(context)!
+                            .registerScreen_LoginButton,
                         style: TextStyle(
-                          color: Color(0xff40C4A3),
-                          fontSize: 16,
+                          color: const Color(0xff40C4A3),
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

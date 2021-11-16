@@ -1,2 +1,20 @@
 {
+    "loginScreen_screenMainTitle": "تسجيل دخول",
+    "loginScreen_UsernameOrEmailTextFieldLabel": "اسم المستخدم أو الايميل",
+    "loginScreen_passwordTextFieldLabel": "كلمة المرور",
+    "loginScreen_loginElevatedButtonText": "تسجيل دخول",
+    "loginScreen_newUserQuestion": "هل أنت مستخدم جديد؟",
+    "loginScreen_signUpNowButton": "سجل الآن",
+    "registerScreen_screenMainTitle": "إنشاء حساب",
+    "registerScreen_usernameTextFieldLabel": "اسم المستخدم",
+    "registerScreen_emailTextFieldLabel": "البريد الالكتروني",
+    "registerScreen_passwordTextFieldLabel": "كلمة المرور",
+    "registerScreen_createAccountElevatedButtonText": "إنشاء حساب",
+    "registerScreen_AlreadyAUserQuestion": "لديك حساب؟",
+    "registerScreen_LoginButton": "تسجيل دخول",
+    "enterNameScreen_screenMainTitle": "ادخل إسمك",
+    "enterNameScreen_fullNameTextFieldHint": "الاسم بالكامل...",
+    "enterNameScreen_nextElevatedButtonText": "التالي",
+    "selectBirthDayScreen_screenMainTitle": "ادخل تاريخ الميلاد",
+    "selectBirthDayScreen_continueElevatedButtonText": "التالي"
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class SelectAgeTextField extends StatefulWidget {
-  const SelectAgeTextField({
+class SelectBirthDayTextField extends StatefulWidget {
+  const SelectBirthDayTextField({
     Key? key,
     required this.textEditingController,
     required this.focusNode,
@@ -23,10 +23,10 @@ class SelectAgeTextField extends StatefulWidget {
   final bool enabled;
 
   @override
-  State<SelectAgeTextField> createState() => _SelectAgeTextFieldState();
+  State<SelectBirthDayTextField> createState() => _SelectBirthDayTextFieldState();
 }
 
-class _SelectAgeTextFieldState extends State<SelectAgeTextField> {
+class _SelectBirthDayTextFieldState extends State<SelectBirthDayTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(

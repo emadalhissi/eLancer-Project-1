@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EnterNameScreen extends StatefulWidget {
   const EnterNameScreen({Key? key}) : super(key: key);
@@ -31,21 +33,22 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
           Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: const [
               Image(
                 image: AssetImage('images/bg.png'),
               ),
             ],
           ),
           Positioned(
-            height: 600,
+            height: 500.h,
             width: MediaQuery.of(context).size.width,
             child: Center(
               child: Text(
-                'Enter Full Name',
+                // 'Enter Full Name',
+                AppLocalizations.of(context)!.enterNameScreen_screenMainTitle,
                 style: TextStyle(
-                  color: Color(0xff373737),
-                  fontSize: 28,
+                  color: const Color(0xff373737),
+                  fontSize: 28.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -56,60 +59,69 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 60),
+                SizedBox(height: 60.h),
                 TextField(
                   controller: _fullNameEditingController,
                   onChanged: (value) {
-                    setState(() {
-                      _fullNameEditingController;
-                    });
+                    setState(
+                      () {
+                        _fullNameEditingController;
+                      },
+                    );
                   },
                   showCursor: false,
                   decoration: InputDecoration(
-                    hintText: 'Full Name...',
-                    hintStyle: TextStyle(
+                    // hintText: 'Full Name...',
+                    hintText: AppLocalizations.of(context)!
+                        .enterNameScreen_fullNameTextFieldHint,
+                    hintStyle: const TextStyle(
                       color: Colors.grey,
                       letterSpacing: 1,
                     ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xffE5E5E5),
-                        width: 1,
+                        color: const Color(0xffE5E5E5),
+                        width: 1.w,
                       ),
                     ),
-                    // labelText: 'Username or Email',
                     labelStyle: TextStyle(
-                      color: Color(0xffA1A1A1),
+                      color: const Color(0xffA1A1A1),
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 13.sp,
                     ),
                   ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 40.h),
                 ElevatedButton(
                   onPressed: runFullNameNextButton()
                       ? () {
-                          Future.delayed(Duration(milliseconds: 500), () {
-                            Navigator.pushNamed(context, '/select_age_screen');
-                          });
+                          Future.delayed(
+                            const Duration(milliseconds: 500),
+                            () {
+                              Navigator.pushNamed(
+                                  context, '/select_age_screen');
+                            },
+                          );
                         }
                       : null,
                   child: Text(
-                    'NEXT',
+                    // 'NEXT',
+                    AppLocalizations.of(context)!
+                        .enterNameScreen_nextElevatedButtonText,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 50),
-                    primary: Color(0xff42C6A5),
+                    minimumSize: Size(double.infinity, 50.h),
+                    primary: const Color(0xff42C6A5),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(50.r),
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
               ],
             ),
           ),

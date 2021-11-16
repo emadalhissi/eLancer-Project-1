@@ -1,2 +1,20 @@
 {
+    "loginScreen_screenMainTitle": "Login",
+    "loginScreen_UsernameOrEmailTextFieldLabel": "Username or Email",
+    "loginScreen_passwordTextFieldLabel": "Enter Password",
+    "loginScreen_loginElevatedButtonText": "LOGIN",
+    "loginScreen_newUserQuestion": "New User ?",
+    "loginScreen_signUpNowButton": "Sign Up Now",
+    "registerScreen_screenMainTitle": "Register",
+    "registerScreen_usernameTextFieldLabel": "Username",
+    "registerScreen_emailTextFieldLabel": "Email",
+    "registerScreen_passwordTextFieldLabel": "Create Password",
+    "registerScreen_createAccountElevatedButtonText": "Create Account",
+    "registerScreen_AlreadyAUserQuestion": "Already a User ?",
+    "registerScreen_LoginButton": "Login",
+    "enterNameScreen_screenMainTitle": "Enter Full Name",
+    "enterNameScreen_fullNameTextFieldHint": "Full Name...",
+    "enterNameScreen_nextElevatedButtonText": "NEXT",
+    "selectBirthDayScreen_screenMainTitle": "Enter Birth Day",
+    "selectBirthDayScreen_continueElevatedButtonText": "CONTINUE"
 }

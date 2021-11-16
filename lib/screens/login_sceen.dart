@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -8,7 +10,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   late TextEditingController _usernameOrEmailEditingController;
   late TextEditingController _passwordEditingController;
 
@@ -35,35 +36,33 @@ class _LoginScreenState extends State<LoginScreen> {
           Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: const [
               Image(
                 image: AssetImage('images/bg.png'),
               ),
             ],
           ),
           Positioned(
-            height: 310,
-            width: MediaQuery
-                .of(context)
-                .size
-                .width,
+            height: 300.h,
+            width: MediaQuery.of(context).size.width,
             child: Center(
               child: Text(
-                'Login',
+                // 'Login',
+                AppLocalizations.of(context)!.loginScreen_screenMainTitle,
                 style: TextStyle(
-                  color: Color(0xff373737),
-                  fontSize: 32,
+                  color: const Color(0xff373737),
+                  fontSize: 30.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 56),
+            padding: EdgeInsets.symmetric(horizontal: 54.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 40),
+                SizedBox(height: 40.h),
                 TextField(
                   controller: _usernameOrEmailEditingController,
                   onChanged: (value) {
@@ -75,19 +74,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xffE5E5E5),
-                        width: 1,
+                        color: const Color(0xffE5E5E5),
+                        width: 1.w,
                       ),
                     ),
-                    labelText: 'Username or Email',
+                    // labelText: 'Username or Email',
+                    labelText: AppLocalizations.of(context)!
+                        .loginScreen_UsernameOrEmailTextFieldLabel,
                     labelStyle: TextStyle(
-                      color: Color(0xffA1A1A1),
+                      color: const Color(0xffA1A1A1),
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 13.sp,
                     ),
                   ),
                 ),
-                SizedBox(height: 13),
+                SizedBox(height: 13.h),
                 TextField(
                   controller: _passwordEditingController,
                   onChanged: (value) {
@@ -99,59 +100,71 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xffE5E5E5),
-                        width: 1,
+                        color: const Color(0xffE5E5E5),
+                        width: 1.w,
                       ),
                     ),
-                    labelText: 'Enter Password',
+                    // labelText: 'Enter Password',
+                    labelText: AppLocalizations.of(context)!
+                        .loginScreen_passwordTextFieldLabel,
                     labelStyle: TextStyle(
-                      color: Color(0xffA1A1A1),
+                      color: const Color(0xffA1A1A1),
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 13.sp,
                     ),
                   ),
                 ),
-                SizedBox(height: 32),
+                SizedBox(height: 32.h),
                 ElevatedButton(
                   onPressed: runLoginButton() ? () {} : null,
                   child: Text(
-                    'LOGIN',
+                    // 'LOGIN',
+                    AppLocalizations.of(context)!
+                        .loginScreen_loginElevatedButtonText,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 50),
-                    primary: Color(0xff42C6A5),
+                    minimumSize: Size(double.infinity, 50.h),
+                    primary: const Color(0xff42C6A5),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(50.r),
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'New User ?',
+                      // 'New User ?',
+                      AppLocalizations.of(context)!.loginScreen_newUserQuestion,
                       style: TextStyle(
-                        color: Color(0xff919191),
-                        fontSize: 16,
+                        color: const Color(0xff919191),
+                        fontSize: 14.sp,
                       ),
                     ),
                     TextButton(
                       onPressed: () {
-                        Future.delayed(Duration(milliseconds: 500), () {
-                          Navigator.pushReplacementNamed(
-                              context, '/register_screen');
-                        });
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              '/register_screen',
+                            );
+                          },
+                        );
                       },
                       child: Text(
-                        'Sign Up Now',
+                        // 'Sign Up Now',
+                        AppLocalizations.of(context)!
+                            .loginScreen_signUpNowButton,
                         style: TextStyle(
-                          color: Color(0xff40C4A3),
-                          fontSize: 16,
+                          color: const Color(0xff40C4A3),
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -167,7 +180,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   bool runLoginButton() {
-    if (_usernameOrEmailEditingController.text.isNotEmpty && _passwordEditingController.text.isNotEmpty) {
+    if (_usernameOrEmailEditingController.text.isNotEmpty &&
+        _passwordEditingController.text.isNotEmpty) {
       return true;
     } else {
       return false;

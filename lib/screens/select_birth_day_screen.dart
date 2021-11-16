@@ -1,15 +1,17 @@
-import 'package:elancer_project_1/widgets/select_age_text_field.dart';
+import 'package:elancer_project_1/widgets/select_birth_day_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SelectAgeScreen extends StatefulWidget {
-  const SelectAgeScreen({Key? key}) : super(key: key);
+class SelectBirthDayScreen extends StatefulWidget {
+  const SelectBirthDayScreen({Key? key}) : super(key: key);
 
   @override
-  _SelectAgeScreenState createState() => _SelectAgeScreenState();
+  _SelectBirthDayScreenState createState() => _SelectBirthDayScreenState();
 }
 
-class _SelectAgeScreenState extends State<SelectAgeScreen> {
+class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
   late TextEditingController _firstNumberOfDayEditingController;
   late TextEditingController _secondNumberOfDayEditingController;
   late TextEditingController _firstNumberOfMonthEditingController;
@@ -83,49 +85,52 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
           Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: const [
               Image(
                 image: AssetImage('images/bg.png'),
               ),
             ],
           ),
           Positioned(
-            height: 600,
+            height: 400.h,
             width: MediaQuery.of(context).size.width,
             child: Center(
               child: Text(
-                'Enter Your Age',
+                // 'Enter Your Age',
+                AppLocalizations.of(context)!
+                    .selectBirthDayScreen_screenMainTitle,
                 style: TextStyle(
-                  color: Color(0xff373737),
-                  fontSize: 28,
+                  color: const Color(0xff373737),
+                  fontSize: 25.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
             child: Column(
               // mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 60, vertical: 50),
+                  padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 60.w),
                   child: Row(
                     children: [
                       //---------------------------DAY---------------------------
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _firstNumberOfDayEditingController,
                           focusNode: _firstNumberOfDayFocusNode,
                           hint: 'D',
                           onChanged: (value) {
-                            setState(() {
-                              _firstNumberOfDayEditingController;
-                            });
+                            setState(
+                              () {
+                                _firstNumberOfDayEditingController;
+                              },
+                            );
                             if (value.isNotEmpty) {
                               // enabled = true;
                               _secondNumberOfDayFocusNode.requestFocus();
@@ -141,16 +146,18 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       // SizedBox(width: 10),
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _secondNumberOfDayEditingController,
                           focusNode: _secondNumberOfDayFocusNode,
                           hint: 'D',
                           enabled: true,
                           onChanged: (value) {
-                            setState(() {
-                              _secondNumberOfDayEditingController;
-                            });
+                            setState(
+                              () {
+                                _secondNumberOfDayEditingController;
+                              },
+                            );
                             if (value.isNotEmpty) {
                               _firstNumberOfMonthFocusNode.requestFocus();
                             } else {
@@ -168,7 +175,7 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                           '/',
                           style: TextStyle(
                             color: Colors.grey,
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -176,15 +183,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       //---------------------------MONTH---------------------------
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _firstNumberOfMonthEditingController,
                           focusNode: _firstNumberOfMonthFocusNode,
                           hint: 'M',
                           onChanged: (value) {
-                            setState(() {
-                              _firstNumberOfMonthEditingController;
-                            });
+                            setState(
+                              () {
+                                _firstNumberOfMonthEditingController;
+                              },
+                            );
                             if (value.isNotEmpty) {
                               _secondNumberOfMonthFocusNode.requestFocus();
                             } else {
@@ -198,15 +207,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       // SizedBox(width: 10),
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _secondNumberOfMonthEditingController,
                           focusNode: _secondNumberOfMonthFocusNode,
                           hint: 'M',
                           onChanged: (value) {
-                            setState(() {
-                              _secondNumberOfMonthEditingController;
-                            });
+                            setState(
+                              () {
+                                _secondNumberOfMonthEditingController;
+                              },
+                            );
                             if (value.isNotEmpty) {
                               _firstNumberOfYearFocusNode.requestFocus();
                             } else {
@@ -224,7 +235,7 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                           ' / ',
                           style: TextStyle(
                             color: Colors.grey,
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -232,15 +243,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       //---------------------------YEAR---------------------------
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _firstNumberOfYearEditingController,
                           focusNode: _firstNumberOfYearFocusNode,
                           hint: 'Y',
                           onChanged: (value) {
-                            setState(() {
-                              _firstNumberOfYearEditingController;
-                            });
+                            setState(
+                              () {
+                                _firstNumberOfYearEditingController;
+                              },
+                            );
                             if (value.isNotEmpty) {
                               _secondNumberOfYearFocusNode.requestFocus();
                             } else {
@@ -254,15 +267,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       // SizedBox(width: 10),
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _secondNumberOfYearEditingController,
                           focusNode: _secondNumberOfYearFocusNode,
                           hint: 'Y',
                           onChanged: (value) {
-                            setState(() {
-                              _secondNumberOfYearEditingController;
-                            });
+                            setState(
+                              () {
+                                _secondNumberOfYearEditingController;
+                              },
+                            );
                             if (value.isNotEmpty) {
                               _thirdNumberOfYearFocusNode.requestFocus();
                             } else {
@@ -276,15 +291,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       // SizedBox(width: 10),
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _thirdNumberOfYearEditingController,
                           focusNode: _thirdNumberOfYearFocusNode,
                           hint: 'Y',
                           onChanged: (value) {
-                            setState(() {
-                              _thirdNumberOfYearEditingController;
-                            });
+                            setState(
+                              () {
+                                _thirdNumberOfYearEditingController;
+                              },
+                            );
                             if (value.isNotEmpty) {
                               _fourthNumberOfYearFocusNode.requestFocus();
                             } else {
@@ -298,15 +315,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       // SizedBox(width: 10),
                       Expanded(
                         // width: 20,
-                        child: SelectAgeTextField(
+                        child: SelectBirthDayTextField(
                           textEditingController:
                               _fourthNumberOfYearEditingController,
                           focusNode: _fourthNumberOfYearFocusNode,
                           hint: 'Y',
                           onChanged: (value) {
-                            setState(() {
-                              _fourthNumberOfYearEditingController;
-                            });
+                            setState(
+                              () {
+                                _fourthNumberOfYearEditingController;
+                              },
+                            );
                             if (value.isEmpty) {
                               _thirdNumberOfYearFocusNode.requestFocus();
                             }
@@ -321,17 +340,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 60),
+                  padding: EdgeInsets.symmetric(horizontal: 50.w),
                   child: Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(50.r),
                       gradient: LinearGradient(
                         // begin: Alignment.topLeft,
                         // end: Alignment.bottomRight,
-                        begin: Alignment(-1.0, -4.0),
-                        end: Alignment(1.0, 4.0),
-                        stops: [0.20, 0.25, 0.375, 0.5, 0.55, 0.6, 0.65, 1.0],
+                        begin: const Alignment(-1.0, -4.0),
+                        end: const Alignment(1.0, 4.0),
+                        stops: const [0.20, 0.25, 0.375, 0.5, 0.55, 0.6, 0.65, 1.0],
                         colors: [
                           // _firstNumberOfDayEditingController.text.isEmpty
                           //     ? Colors.grey.shade400
@@ -359,49 +378,54 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                           //     : Color(0xff0047ab),
                           _firstNumberOfDayEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                           _secondNumberOfDayEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                           _firstNumberOfMonthEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                           _secondNumberOfMonthEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                           _firstNumberOfYearEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                           _secondNumberOfYearEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                           _thirdNumberOfYearEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                           _fourthNumberOfYearEditingController.text.isEmpty
                               ? Colors.grey.shade400
-                              : Color(0xff00bfff),
+                              : const Color(0xff00bfff),
                         ],
                       ),
                     ),
                     child: ElevatedButton(
                       onPressed: runButton() ? () {} : null,
-                      child: Text('CONTINUE'),
+                      child: Text(
+                        // 'CONTINUE',
+                        AppLocalizations.of(context)!
+                            .selectBirthDayScreen_continueElevatedButtonText,
+                      ),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
+                          borderRadius: BorderRadius.circular(50.r),
                         ),
-                        minimumSize: Size(double.infinity, 50),
+                        minimumSize: Size(double.infinity, 50.h),
                         textStyle: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 15.sp,
                           letterSpacing: 1.4,
                         ),
                       ),
                     ),
                   ),
                 ),
+                SizedBox(height: 70.h),
                 // SizedBox(height: 70),
               ],
             ),
