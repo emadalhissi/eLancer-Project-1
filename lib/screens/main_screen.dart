@@ -92,9 +92,11 @@ class _MainScreenState extends State<MainScreen> {
       body: _bnScreens[_currentIndex].widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int value) {
-          setState(() {
-            _currentIndex = value;
-          });
+          setState(
+            () {
+              _currentIndex = value;
+            },
+          );
         },
         currentIndex: _currentIndex,
         showUnselectedLabels: false,
@@ -108,7 +110,7 @@ class _MainScreenState extends State<MainScreen> {
             icon: BnbIcon(bnbIcon: Icons.shopping_cart_rounded),
             label: '',
             activeIcon:
-            BnbActiveIcon(bnbActiveIcon: Icons.shopping_cart_rounded),
+                BnbActiveIcon(bnbActiveIcon: Icons.shopping_cart_rounded),
           ),
           BottomNavigationBarItem(
             icon: BnbIcon(bnbIcon: Icons.widgets_rounded),
@@ -118,20 +120,17 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: BnbIcon(bnbIcon: Icons.home),
             label: '',
-            activeIcon:
-            BnbActiveIcon(bnbActiveIcon: Icons.home),
+            activeIcon: BnbActiveIcon(bnbActiveIcon: Icons.home),
           ),
           BottomNavigationBarItem(
             icon: BnbIcon(bnbIcon: Icons.favorite),
             label: '',
-            activeIcon:
-            BnbActiveIcon(bnbActiveIcon: Icons.favorite),
+            activeIcon: BnbActiveIcon(bnbActiveIcon: Icons.favorite),
           ),
           BottomNavigationBarItem(
             icon: BnbIcon(bnbIcon: Icons.menu),
             label: '',
-            activeIcon:
-            BnbActiveIcon(bnbActiveIcon: Icons.menu),
+            activeIcon: BnbActiveIcon(bnbActiveIcon: Icons.menu),
           ),
         ],
       ),

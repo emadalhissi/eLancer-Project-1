@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LaunchScreen extends StatefulWidget {
   const LaunchScreen({Key? key}) : super(key: key);
@@ -7,14 +10,29 @@ class LaunchScreen extends StatefulWidget {
   _LaunchScreenState createState() => _LaunchScreenState();
 }
 
+class _LaunchScreenState
+    extends State<LaunchScreen> /*with TickerProviderStateMixin*/ {
+  // final Widget svgImage = SvgPicture.asset('images/svg');
 
-class _LaunchScreenState extends State<LaunchScreen> {
+  // late AnimationController controller;
+  // late Animation<double> animation;
+
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/out_boarding_screen');
     });
     super.initState();
+    // controller = AnimationController(
+    //   duration: const Duration(milliseconds: 500),
+    //   vsync: this,
+    // );
+    // animation = CurvedAnimation(
+    //   parent: controller,
+    //   curve: Curves.fastOutSlowIn,
+    // );
+    //
+    // controller.forward();
   }
 
   @override
@@ -22,25 +40,29 @@ class _LaunchScreenState extends State<LaunchScreen> {
     return Scaffold(
       body: Container(
         child: Center(
-          child: Text(
-            'eLancer',
-            style: TextStyle(
-              fontSize: 55,
-              fontStyle: FontStyle.italic,
-              color: Color(0xff0f62ac),
-              fontWeight: FontWeight.bold,
+          // child: FadeTransition(
+          //   opacity: animation,
+          child: Container(
+            // child: SvgPicture.asset('images/elancer_logo.svg'),
+            margin: EdgeInsets.symmetric(horizontal: 25.w),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/elancer_logo_min.png'),
+              ),
             ),
           ),
+          // ),
         ),
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          colors: [
-            Color(0xffd8edf7),
-            Color(0xffe0f2fc),
-          ],
-          begin: AlignmentDirectional.topStart,
-          end: AlignmentDirectional.bottomEnd,
-        )),
+          gradient: LinearGradient(
+            colors: [
+              Color(0xffd8edf7),
+              Color(0xffe0f2fc),
+            ],
+            begin: AlignmentDirectional.topStart,
+            end: AlignmentDirectional.bottomEnd,
+          ),
+        ),
       ),
     );
   }
