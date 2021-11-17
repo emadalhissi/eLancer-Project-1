@@ -19,16 +19,17 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final List<BnScreen> _bnScreens = <BnScreen>[
-    BnScreen(title: 'Home', widget: const HomeScreen()),
     BnScreen(title: 'Menu', widget: const MenuScreen()),
+    BnScreen(title: 'About eLancer', widget: const AboutELancerScreen()),
+    BnScreen(title: 'Home', widget: const HomeScreen()),
     BnScreen(title: 'Courses', widget: const CoursesScreen()),
     BnScreen(title: 'Achievements', widget: const AchievementsScreen()),
-    BnScreen(title: 'About eLancer', widget: const AboutELancerScreen()),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
       appBar: AppBar(
         flexibleSpace: Stack(
@@ -39,8 +40,8 @@ class _MainScreenState extends State<MainScreen> {
                   begin: Alignment.centerRight,
                   end: Alignment.centerLeft,
                   colors: [
-                    Color(0xff970810),
-                    Color(0xffBB0D16),
+                    Color(0xff049bde),
+                    Color(0xff00afef),
                   ],
                 ),
               ),
@@ -65,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ],
         ),
-        title: Text('Home'),
+        title: Text(_bnScreens[_currentIndex].title),
         // title: const Image(
         //   image: AssetImage('images/appbar_logo.png'),
         //   width: 69,
@@ -107,15 +108,15 @@ class _MainScreenState extends State<MainScreen> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: BnbIcon(bnbIcon: Icons.shopping_cart_rounded),
+            icon: BnbIcon(bnbIcon: Icons.menu),
             label: '',
-            activeIcon:
-                BnbActiveIcon(bnbActiveIcon: Icons.shopping_cart_rounded),
+            activeIcon: BnbActiveIcon(bnbActiveIcon: Icons.menu),
           ),
           BottomNavigationBarItem(
-            icon: BnbIcon(bnbIcon: Icons.widgets_rounded),
+            icon: BnbIcon(bnbIcon: Icons.info),
             label: '',
-            activeIcon: BnbActiveIcon(bnbActiveIcon: Icons.widgets_rounded),
+            activeIcon:
+                BnbActiveIcon(bnbActiveIcon: Icons.info_outline_rounded),
           ),
           BottomNavigationBarItem(
             icon: BnbIcon(bnbIcon: Icons.home),
@@ -128,9 +129,10 @@ class _MainScreenState extends State<MainScreen> {
             activeIcon: BnbActiveIcon(bnbActiveIcon: Icons.favorite),
           ),
           BottomNavigationBarItem(
-            icon: BnbIcon(bnbIcon: Icons.menu),
+            icon: BnbIcon(bnbIcon: Icons.volunteer_activism),
             label: '',
-            activeIcon: BnbActiveIcon(bnbActiveIcon: Icons.menu),
+            activeIcon:
+                BnbActiveIcon(bnbActiveIcon: Icons.volunteer_activism_outlined),
           ),
         ],
       ),

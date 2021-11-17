@@ -19,7 +19,7 @@ class _LaunchScreenState
 
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/out_boarding_screen');
     });
     super.initState();

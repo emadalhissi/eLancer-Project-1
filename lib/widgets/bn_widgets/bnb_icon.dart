@@ -28,6 +28,7 @@ class BnbIcon extends StatelessWidget {
           child: Icon(
             bnbIcon,
             color: const Color(0xff7B7B81),
+            size: 26,
           ),
         ),
       ],

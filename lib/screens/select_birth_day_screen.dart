@@ -114,7 +114,8 @@ class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 60.w),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 50.h, horizontal: 60.w),
                   child: Row(
                     children: [
                       //---------------------------DAY---------------------------
@@ -350,7 +351,16 @@ class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
                         // end: Alignment.bottomRight,
                         begin: const Alignment(-1.0, -4.0),
                         end: const Alignment(1.0, 4.0),
-                        stops: const [0.20, 0.25, 0.375, 0.5, 0.55, 0.6, 0.65, 1.0],
+                        stops: const [
+                          0.20,
+                          0.25,
+                          0.375,
+                          0.5,
+                          0.55,
+                          0.6,
+                          0.65,
+                          1.0
+                        ],
                         colors: [
                           // _firstNumberOfDayEditingController.text.isEmpty
                           //     ? Colors.grey.shade400
@@ -404,7 +414,17 @@ class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
                       ),
                     ),
                     child: ElevatedButton(
-                      onPressed: runButton() ? () {} : null,
+                      onPressed: runButton()
+                          ? () {
+                              Future.delayed(
+                                const Duration(milliseconds: 500),
+                                () {
+                                  Navigator.pushReplacementNamed(
+                                      context, '/main_screen');
+                                },
+                              );
+                            }
+                          : null,
                       child: Text(
                         // 'CONTINUE',
                         AppLocalizations.of(context)!

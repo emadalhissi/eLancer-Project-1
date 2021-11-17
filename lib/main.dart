@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData(fontFamily: 'Roboto'),
           debugShowCheckedModeBanner: false,
-          initialRoute: '/launch_screen',
+          initialRoute: '/main_screen',
           routes: {
             //----------------------PRIMARY-------------------------------
             '/launch_screen': (context) => const LaunchScreen(),

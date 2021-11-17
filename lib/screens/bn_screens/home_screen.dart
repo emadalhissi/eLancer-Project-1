@@ -10,6 +10,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Icon(
+        Icons.home,
+        size: 80,
+        color: Colors.grey,
+      ),
+    );
   }
 }
