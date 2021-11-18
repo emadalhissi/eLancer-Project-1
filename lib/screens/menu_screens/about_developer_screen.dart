@@ -27,6 +27,12 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        title: Text(
+          'About Developer',
+          style: TextStyle(
+            color: Colors.grey.shade800,
+          ),
+        ),
         leadingWidth: 80,
         toolbarHeight: 100,
         backgroundColor: Colors.transparent,

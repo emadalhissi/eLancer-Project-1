@@ -2,7 +2,7 @@ import 'package:elancer_project_1/screens/menu_screens/about_developer_screen.da
 import 'package:elancer_project_1/screens/bn_screens/about_elancer_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/achievements_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/courses_screen.dart';
-import 'package:elancer_project_1/screens/menu_screens/founders_screen.dart';
+import 'package:elancer_project_1/screens/menu_screens/founder_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/home_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/menu_screen.dart';
 import 'package:elancer_project_1/screens/menu_screens/work_staff_screen.dart';
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
             //----------------------MENU SCREENS-------------------------------
             '/about_developer_screen': (context) => const AboutDeveloperScreen(),
             '/work_staff_screen': (context) => const WorkStaffScreen(),
-            '/founders_screen': (context) => const FoundersScreen(),
+            '/founder_screen': (context) => const FounderScreen(),
           },
           // localizationsDelegates: [
           //   GlobalMaterialLocalizations.delegate,

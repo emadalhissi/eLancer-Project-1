@@ -31,6 +31,44 @@ class _MenuScreenState extends State<MenuScreen> {
                   );
                 },
               ),
+              MenuScreenListTile(
+                title: 'Work Staff',
+                icon: Icons.work,
+                circleAvatarBGColor: Color(0xff039fe1),
+                onTab: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/work_staff_screen',
+                  );
+                },
+              ),
+              Divider(
+                color: Colors.grey.shade800,
+                thickness: 0.5,
+                indent: 20,
+                endIndent: 20,
+                height: 50,
+              ),
+              ListTile(
+                onTap: (){
+                  Future.delayed(Duration(seconds: 1), (){
+                    Navigator.pushNamed(context, '/login_screen');
+                  });
+                },
+                leading: CircleAvatar(
+                  backgroundColor: Colors.red.shade400,
+                  child: Icon(Icons.logout_outlined, color: Colors.white, size: 25,),
+                  radius: 25,
+                ),
+                contentPadding: EdgeInsets.symmetric(horizontal: 5),
+                title: Text(
+                  'Logout',
+                  style: TextStyle(
+                    color: Color(0xff7B7B81),
+                    letterSpacing: 1,
+                  ),
+                ),
+              ),
             ]
           ),
         ),
