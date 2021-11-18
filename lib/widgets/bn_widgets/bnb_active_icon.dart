@@ -13,17 +13,10 @@ class BnbActiveIcon extends StatelessWidget {
       children: [
         const CircleAvatar(
           backgroundColor: Color(0xfff9b31e),
-          // backgroundImage: AssetImage('images/bnb_c_1.png'),
           radius: 28,
           child: CircleAvatar(
             radius: 25,
             backgroundColor: Color(0xfffcba2c),
-            // backgroundImage: AssetImage('images/bnb_c_2.png'),
-            // child: CircleAvatar(
-            //   radius: 22,
-            //   backgroundColor: Colors.transparent,
-            //   // backgroundImage: AssetImage('images/bnb_c_3.png'),
-            // ),
           ),
         ),
         Positioned.fill(

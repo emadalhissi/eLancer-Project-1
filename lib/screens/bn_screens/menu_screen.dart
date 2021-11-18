@@ -12,29 +12,28 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        physics: const NeverScrollableScrollPhysics(),
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5),
-            child: MenuScreenListTile(
-              title: 'About Developer',
-              icon: Icons.person,
-              circleAvatarBGColor: Color(0xff039fe1),
-              onTab: () {
-                Navigator.pushNamed(
-                  context,
-                  '/about_developer_screen',
-                );
-              },
-            ),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              MenuScreenListTile(
+                title: 'About Developer',
+                icon: Icons.person,
+                circleAvatarBGColor: Color(0xff039fe1),
+                onTab: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/about_developer_screen',
+                  );
+                },
+              ),
+            ]
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5),
-            // child: MenuScreenListTile(),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -17,19 +17,22 @@ class MenuScreenListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onTab,
-      leading: CircleAvatar(
-        backgroundColor: circleAvatarBGColor,
-        child: Icon(icon, color: Colors.white, size: 25,),
-        radius: 25,
-      ),
-      contentPadding: EdgeInsets.symmetric(horizontal: 5),
-      title: Text(
-        title,
-        style: TextStyle(
-          color: Color(0xff7B7B81),
-          letterSpacing: 1,
+    return Padding(
+      padding: EdgeInsets.only(bottom: 10, top: 5),
+      child: ListTile(
+        onTap: onTab,
+        leading: CircleAvatar(
+          backgroundColor: circleAvatarBGColor,
+          child: Icon(icon, color: Colors.white, size: 25,),
+          radius: 25,
+        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 5),
+        title: Text(
+          title,
+          style: TextStyle(
+            color: Color(0xff7B7B81),
+            letterSpacing: 1,
+          ),
         ),
       ),
     );
