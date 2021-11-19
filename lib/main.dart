@@ -5,13 +5,18 @@ import 'package:elancer_project_1/screens/bn_screens/courses_screen.dart';
 import 'package:elancer_project_1/screens/menu_screens/founder_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/home_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/menu_screen.dart';
+import 'package:elancer_project_1/screens/menu_screens/my_profile_screen.dart';
+import 'package:elancer_project_1/screens/menu_screens/news_screen.dart';
+import 'package:elancer_project_1/screens/menu_screens/settings_screen.dart';
 import 'package:elancer_project_1/screens/menu_screens/work_staff_screen.dart';
 import 'package:elancer_project_1/screens/enter_name_sceen.dart';
 import 'package:elancer_project_1/screens/launch_screen.dart';
 import 'package:elancer_project_1/screens/login_sceen.dart';
 import 'package:elancer_project_1/screens/main_screen.dart';
+import 'package:elancer_project_1/screens/notifications_screen.dart';
 import 'package:elancer_project_1/screens/outboarding/out_boarding_screen.dart';
 import 'package:elancer_project_1/screens/register_sceen.dart';
+import 'package:elancer_project_1/screens/search_screen.dart';
 import 'package:elancer_project_1/screens/select_birth_day_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -49,9 +54,15 @@ class MyApp extends StatelessWidget {
             '/about_lancer_screen': (context) => const AboutELancerScreen(),
             '/menu_screen': (context) => const MenuScreen(),
             //----------------------MENU SCREENS-------------------------------
-            '/about_developer_screen': (context) => const AboutDeveloperScreen(),
+            '/my_profile_screen': (context) => const MyProfileScreen(),
             '/work_staff_screen': (context) => const WorkStaffScreen(),
             '/founder_screen': (context) => const FounderScreen(),
+            '/about_developer_screen': (context) => const AboutDeveloperScreen(),
+            '/news_screen': (context) => const NewsScreen(),
+            '/settings_screen': (context) => const SettingsScreen(),
+            //----------------------ELSE-------------------------------
+            '/notifications_screen': (context) => const NotificationsScreen(),
+            '/search_screen': (context) => const SearchScreen(),
           },
           // localizationsDelegates: [
           //   GlobalMaterialLocalizations.delegate,

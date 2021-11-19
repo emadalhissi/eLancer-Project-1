@@ -9,6 +9,7 @@ AppBar buildAppBar({
   bool hasSecondActionsIcon = false,
   IconData? leadingIconButton,
   bool hasLeadingActionsIcon = false,
+
 }) {
   return AppBar(
     flexibleSpace: Stack(

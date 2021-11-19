@@ -21,15 +21,22 @@ class _MenuScreenState extends State<MenuScreen> {
           child: Column(
             children: [
               MenuScreenListTile(
-                title: 'About Developer',
+                title: 'My Profile',
                 icon: Icons.person,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
                     context,
-                    '/about_developer_screen',
+                    '/my_profile_screen',
                   );
                 },
+              ),
+              Divider(
+                color: Colors.grey.shade800,
+                thickness: 0.5,
+                indent: 20,
+                endIndent: 20,
+                height: 20,
               ),
               MenuScreenListTile(
                 title: 'Work Staff',
@@ -42,12 +49,70 @@ class _MenuScreenState extends State<MenuScreen> {
                   );
                 },
               ),
+              MenuScreenListTile(
+                title: 'Founder',
+                icon: Icons.monetization_on_sharp,
+                circleAvatarBGColor: Color(0xff039fe1),
+                onTab: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/founder_screen',
+                  );
+                },
+              ),
               Divider(
                 color: Colors.grey.shade800,
                 thickness: 0.5,
                 indent: 20,
                 endIndent: 20,
-                height: 50,
+                height: 20,
+              ),
+              MenuScreenListTile(
+                title: 'eLancer News',
+                icon: Icons.update,
+                circleAvatarBGColor: Color(0xff039fe1),
+                onTab: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/news_screen',
+                  );
+                },
+              ),
+              MenuScreenListTile(
+                title: 'Settings',
+                icon: Icons.settings,
+                circleAvatarBGColor: Color(0xff039fe1),
+                onTab: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/settings_screen',
+                  );
+                },
+              ),
+              Divider(
+                color: Colors.grey.shade800,
+                thickness: 0.5,
+                indent: 20,
+                endIndent: 20,
+                height: 20,
+              ),
+              MenuScreenListTile(
+                title: 'About Developer',
+                icon: Icons.person,
+                circleAvatarBGColor: Colors.green.shade400,
+                onTab: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/about_developer_screen',
+                  );
+                },
+              ),
+              Divider(
+                color: Colors.grey.shade800,
+                thickness: 0.5,
+                indent: 20,
+                endIndent: 20,
+                height: 20,
               ),
               ListTile(
                 onTap: (){

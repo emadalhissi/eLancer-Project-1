@@ -1,3 +1,4 @@
+import 'package:elancer_project_1/widgets/work_staff_card.dart';
 import 'package:flutter/material.dart';
 
 class WorkStaffScreen extends StatefulWidget {
@@ -46,34 +47,20 @@ class _WorkStaffScreenState extends State<WorkStaffScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             children: [
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 5,
-                      offset: Offset(0.0, 1.0),
-                    ),
-                  ],
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 4,
-                child: Row(
-                  children: [
-                    CircleAvatar(),
-                    Column(
-                      children: [
-                        Text(''),
-                        Text(''),
-                        Row(),
-                      ],
-                    ),
-                  ],
-                ),
+              WorkStaffCard(
+                image: 'images/woman.png',
+                name: 'Doa\'a Seyam',
+                position: 'Project Manager',
+                facebookPage:
+                    'https://www.facebook.com/profile.php?id=100013398008625',
+              ),
+              WorkStaffCard(
+                image: 'images/man.png',
+                name: 'Mohammed AbuHassira',
+                position: 'Project Coordinator',
+                facebookPage: 'https://www.facebook.com/abuhassira.mohammed',
+                email: 'mhassira@ucas.edu.ps',
+                number: '+970597407401',
               ),
             ],
           ),

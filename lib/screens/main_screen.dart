@@ -20,32 +20,11 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final List<BnScreen> _bnScreens = <BnScreen>[
-    BnScreen(widget: const MenuScreen(), appBar: buildAppBar(title: 'Menu')),
-    BnScreen(
-      widget: const AboutELancerScreen(),
-      appBar: buildAppBar(
-        title: 'About eLancer',
-        hasSecondActionsIcon: true,
-        secondActionsIconButton: Icons.notifications_none_sharp,
-      ),
-    ),
-    BnScreen(
-      widget: const HomeScreen(),
-      appBar: buildAppBar(
-        title: 'Home',
-        hasFirstActionsIcon: true,
-        firstActionsIconButton: Icons.phone,
-        hasSecondActionsIcon: true,
-        secondActionsIconButton: Icons.notifications_none_sharp,
-        hasLeadingActionsIcon: true,
-        leadingIconButton: Icons.search,
-      ),
-    ),
-    BnScreen(
-        widget: const CoursesScreen(), appBar: buildAppBar(title: 'Courses')),
-    BnScreen(
-        widget: const AchievementsScreen(),
-        appBar: buildAppBar(title: 'Achievements')),
+    BnScreen(title: 'Menu', widget: const MenuScreen()),
+    BnScreen(title: 'About eLancer', widget: const AboutELancerScreen()),
+    BnScreen(title: 'Home', widget: const HomeScreen()),
+    BnScreen(title: 'Courses', widget: const CoursesScreen()),
+    BnScreen(title: 'Achievements', widget: const AchievementsScreen()),
   ];
 
   @override
@@ -54,7 +33,61 @@ class _MainScreenState extends State<MainScreen> {
       // extendBodyBehindAppBar: true,
       // resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      appBar: _bnScreens[_currentIndex].appBar,
+      appBar: AppBar(
+        centerTitle: true,
+        flexibleSpace: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerRight,
+                  end: Alignment.centerLeft,
+                  colors: [
+                    Color(0xff049bde),
+                    Color(0xff00afef),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              left: 82,
+              top: 25,
+              child: Image(
+                image: AssetImage('images/a_c_1.png'),
+                height: 90,
+                width: 90,
+              ),
+            ),
+            Positioned(
+              left: 140,
+              top: -8,
+              child: Image(
+                image: AssetImage('images/a_c_2.png'),
+                height: 90,
+                width: 90,
+              ),
+            ),
+          ],
+        ),
+        title: Text(_bnScreens[_currentIndex].title),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications_screen');
+            },
+            icon: Icon(Icons.notifications, size: 30),
+          ),
+        ],
+        leading: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/search_screen');
+            },
+            icon: Icon(Icons.search, size: 30),
+          ),
+        ),
+      ),
       body: _bnScreens[_currentIndex].widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int value) {
