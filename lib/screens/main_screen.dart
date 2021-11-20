@@ -17,7 +17,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
 
   final List<BnScreen> _bnScreens = <BnScreen>[
     BnScreen(title: 'Menu', widget: const MenuScreen()),
