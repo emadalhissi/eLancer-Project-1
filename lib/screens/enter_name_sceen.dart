@@ -36,7 +36,7 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               Image(
-                image: AssetImage('images/bg_blue.png'),
+                image: AssetImage('images/bg_blue_min.png'),
               ),
             ],
           ),
