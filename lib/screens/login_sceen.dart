@@ -1,3 +1,5 @@
+import 'package:elancer_project_1/helpers/helpers.dart';
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +11,7 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> with Helpers {
   late TextEditingController _usernameOrEmailEditingController;
   late TextEditingController _passwordEditingController;
 
@@ -38,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               Image(
-                image: AssetImage('images/bg.png'),
+                image: AssetImage('images/bg_blue.png'),
               ),
             ],
           ),
@@ -70,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       _usernameOrEmailEditingController;
                     });
                   },
-                  showCursor: false,
+                  showCursor: true,
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -96,7 +98,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       _passwordEditingController;
                     });
                   },
-                  showCursor: false,
+                  showCursor: true,
+                  obscureText: true,
+                  obscuringCharacter: '*',
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -116,7 +120,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 32.h),
                 ElevatedButton(
-                  onPressed: runLoginButton() ? () {} : null,
+                  onPressed: runLoginButton()
+                      ? () {
+                          performLogin();
+                        }
+                      : null,
                   child: Text(
                     // 'LOGIN',
                     AppLocalizations.of(context)!
@@ -128,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 50.h),
-                    primary: const Color(0xff42C6A5),
+                    primary: const Color(0xfff9a42f),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.r),
                     ),
@@ -163,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         AppLocalizations.of(context)!
                             .loginScreen_signUpNowButton,
                         style: TextStyle(
-                          color: const Color(0xff40C4A3),
+                          color: const Color(0xff0980c6),
                           fontSize: 14.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -179,6 +187,12 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  void performLogin() {
+    if (checkUserInfo()) {
+      login();
+    }
+  }
+
   bool runLoginButton() {
     if (_usernameOrEmailEditingController.text.isNotEmpty &&
         _passwordEditingController.text.isNotEmpty) {
@@ -186,5 +200,31 @@ class _LoginScreenState extends State<LoginScreen> {
     } else {
       return false;
     }
+  }
+
+  bool checkUserInfo() {
+    if ((_usernameOrEmailEditingController.text ==
+                SharedPreferencesController().getUserName ||
+            _usernameOrEmailEditingController.text ==
+                SharedPreferencesController().getEmail) &&
+        _passwordEditingController.text ==
+            SharedPreferencesController().getPassword) {
+      return true;
+    } else {
+      showSnackBar(context: context, message: 'Check Entered Data!', error: true);
+      return false;
+    }
+  }
+
+  void login() {
+    Future.delayed(
+      const Duration(milliseconds: 500),
+      () {
+        Navigator.pushReplacementNamed(
+          context,
+          '/main_screen',
+        );
+      },
+    );
   }
 }

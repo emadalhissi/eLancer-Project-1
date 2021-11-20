@@ -18,11 +18,14 @@ import 'package:elancer_project_1/screens/outboarding/out_boarding_screen.dart';
 import 'package:elancer_project_1/screens/register_sceen.dart';
 import 'package:elancer_project_1/screens/search_screen.dart';
 import 'package:elancer_project_1/screens/select_birth_day_screen.dart';
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferencesController().initSharedPreferences();
   runApp(const MyApp());
 }
 
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData(fontFamily: 'Roboto'),
           debugShowCheckedModeBanner: false,
-          initialRoute: '/main_screen',
+          initialRoute: '/launch_screen',
           routes: {
             //----------------------PRIMARY-------------------------------
             '/launch_screen': (context) => const LaunchScreen(),

@@ -1,3 +1,4 @@
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,6 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: false,
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
@@ -41,7 +43,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               Image(
-                image: AssetImage('images/bg.png'),
+                image: AssetImage('images/bg_blue.png'),
               ),
             ],
           ),
@@ -75,7 +77,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                     );
                   },
-                  showCursor: false,
+                  showCursor: true,
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -103,7 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                     );
                   },
-                  showCursor: false,
+                  showCursor: true,
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -131,7 +133,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                   obscureText: true,
                   obscuringCharacter: '*',
-                  showCursor: false,
+                  showCursor: true,
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -153,13 +155,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ElevatedButton(
                   onPressed: runRegisterButton()
                       ? () {
-                          Future.delayed(
-                            const Duration(milliseconds: 500),
-                            () {
-                              Navigator.pushNamed(
-                                  context, '/enter_name_screen');
-                            },
-                          );
+                          performRegister();
                         }
                       : null,
                   child: Text(
@@ -173,7 +169,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 50.h),
-                    primary: const Color(0xff42C6A5),
+                    primary: const Color(0xfff9a42f),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.r),
                     ),
@@ -206,7 +202,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         AppLocalizations.of(context)!
                             .registerScreen_LoginButton,
                         style: TextStyle(
-                          color: const Color(0xff40C4A3),
+                          color: const Color(0xff0980c6),
                           fontSize: 14.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -230,5 +226,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
     } else {
       return false;
     }
+  }
+
+  void performRegister() {
+    register();
+  }
+
+  void register() async {
+    await SharedPreferencesController()
+        .saveUserName(userName: _usernameEditingController.text);
+    await SharedPreferencesController()
+        .saveEmail(email: _emailEditingController.text);
+    await SharedPreferencesController()
+        .savePassword(password: _passwordEditingController.text);
+
+    Future.delayed(
+      const Duration(milliseconds: 500),
+      () {
+        Navigator.pushNamed(context, '/enter_name_screen');
+      },
+    );
   }
 }

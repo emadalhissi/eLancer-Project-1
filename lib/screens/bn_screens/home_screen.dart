@@ -1,3 +1,4 @@
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               Text(
-                'Welcome, Emad',
+                'Welcome, ' + SharedPreferencesController().getFullName,
                 style: TextStyle(fontSize: 24),
               ),
             ],

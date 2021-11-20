@@ -218,8 +218,8 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         image: DecorationImage(
-                          image: AssetImage('images/elancer_logo_min.png'),
-                          fit: BoxFit.contain,
+                          image: AssetImage('images/elancer_logo_.png'),
+                          fit: BoxFit.fitWidth,
                         ),
                       ),
                     ),

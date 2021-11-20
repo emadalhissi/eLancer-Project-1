@@ -1,3 +1,4 @@
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,7 +36,7 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               Image(
-                image: AssetImage('images/bg.png'),
+                image: AssetImage('images/bg_blue.png'),
               ),
             ],
           ),
@@ -95,13 +96,7 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
                 ElevatedButton(
                   onPressed: runFullNameNextButton()
                       ? () {
-                          Future.delayed(
-                            const Duration(milliseconds: 500),
-                            () {
-                              Navigator.pushNamed(
-                                  context, '/select_age_screen');
-                            },
-                          );
+                          performFullName();
                         }
                       : null,
                   child: Text(
@@ -115,7 +110,7 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 50.h),
-                    primary: const Color(0xff42C6A5),
+                    primary: const Color(0xfff9a42f),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.r),
                     ),
@@ -136,5 +131,22 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
     } else {
       return false;
     }
+  }
+
+  void performFullName() {
+    if (runFullNameNextButton()) {
+      goNext();
+    }
+  }
+
+  void goNext() async {
+    await SharedPreferencesController()
+        .saveFullName(fullName: _fullNameEditingController.text);
+    Future.delayed(
+      const Duration(milliseconds: 500),
+      () {
+        Navigator.pushNamed(context, '/select_age_screen');
+      },
+    );
   }
 }

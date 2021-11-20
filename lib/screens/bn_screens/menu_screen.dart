@@ -1,3 +1,4 @@
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:elancer_project_1/widgets/menu_screen_list_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _MenuScreenState extends State<MenuScreen> {
             children: [
               MenuScreenListTile(
                 title: 'My Profile',
-                icon: Icons.person,
+                icon: Icons.account_circle,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
@@ -69,7 +70,7 @@ class _MenuScreenState extends State<MenuScreen> {
               ),
               MenuScreenListTile(
                 title: 'eLancer News',
-                icon: Icons.update,
+                icon: Icons.watch_later_sharp,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
@@ -98,7 +99,7 @@ class _MenuScreenState extends State<MenuScreen> {
               ),
               MenuScreenListTile(
                 title: 'About Developer',
-                icon: Icons.person,
+                icon: Icons.announcement,
                 circleAvatarBGColor: Colors.green.shade400,
                 onTab: () {
                   Navigator.pushNamed(
@@ -117,6 +118,7 @@ class _MenuScreenState extends State<MenuScreen> {
               ListTile(
                 onTap: (){
                   Future.delayed(Duration(seconds: 1), (){
+                    logout();
                     Navigator.pushNamed(context, '/login_screen');
                   });
                 },
@@ -139,5 +141,9 @@ class _MenuScreenState extends State<MenuScreen> {
         ),
       ),
     );
+  }
+
+  void logout() async {
+    await SharedPreferencesController().logout();
   }
 }

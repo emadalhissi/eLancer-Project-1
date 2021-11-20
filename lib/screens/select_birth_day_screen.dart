@@ -1,3 +1,4 @@
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:elancer_project_1/widgets/select_birth_day_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -87,7 +88,7 @@ class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               Image(
-                image: AssetImage('images/bg.png'),
+                image: AssetImage('images/bg_blue.png'),
               ),
             ],
           ),
@@ -416,13 +417,7 @@ class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
                     child: ElevatedButton(
                       onPressed: runButton()
                           ? () {
-                              Future.delayed(
-                                const Duration(milliseconds: 500),
-                                () {
-                                  Navigator.pushReplacementNamed(
-                                      context, '/main_screen');
-                                },
-                              );
+                              performBirthDay();
                             }
                           : null,
                       child: Text(
@@ -452,6 +447,26 @@ class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  void performBirthDay() {
+    if (runButton()) {
+      goNext();
+    }
+  }
+
+  void goNext() async {
+    await SharedPreferencesController()
+        .saveDateOfBirth(dateOfBirth: setFullBirthDay());
+    await SharedPreferencesController().saveLoggedIn();
+    await SharedPreferencesController().setFirstVisit();
+
+    Future.delayed(
+      const Duration(milliseconds: 500),
+      () {
+        Navigator.pushReplacementNamed(context, '/main_screen');
+      },
     );
   }
 
@@ -488,6 +503,11 @@ class _SelectBirthDayScreenState extends State<SelectBirthDayScreen> {
         _thirdNumberOfYearEditingController.text +
         _fourthNumberOfYearEditingController.text;
     return year;
+  }
+
+  String setFullBirthDay() {
+    String fullBirthDay = setDays() + '-' + setMonth() + '-' + setYear();
+    return fullBirthDay;
   }
 
   String checkerForTheSecondNumberOfMonth() {

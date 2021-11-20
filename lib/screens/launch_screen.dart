@@ -1,3 +1,4 @@
+import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,16 @@ class _LaunchScreenState
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/out_boarding_screen');
+      String route;
+      if(SharedPreferencesController().checkFirstVisit == true) {
+        route = '/out_boarding_screen';
+      } else if(SharedPreferencesController().checkLoggedIn == true) {
+        route = '/main_screen';
+      } else {
+        route = '/login_screen';
+      }
+
+      Navigator.pushReplacementNamed(context, route);
     });
     super.initState();
     // controller = AnimationController(
@@ -47,7 +57,7 @@ class _LaunchScreenState
             margin: EdgeInsets.symmetric(horizontal: 25.w),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/elancer_logo_min.png'),
+                image: AssetImage('images/elancer_logo_.png'),
               ),
             ),
           ),
