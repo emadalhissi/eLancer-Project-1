@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OutBoardingScreen extends StatefulWidget {
   const OutBoardingScreen({Key? key}) : super(key: key);
@@ -55,21 +56,21 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                   },
                 );
               },
-              children: const [
+              children: [
                 OutBoardingContent(
                   imageName: 'ob_1.png',
-                  title: 'New Courses',
-                  subTitle: 'Discover All eLancer New Courses',
+                  title: AppLocalizations.of(context)!.outBoardingScreen_page_1_title,
+                  subTitle: AppLocalizations.of(context)!.outBoardingScreen_page_1_subTitle,
                 ),
                 OutBoardingContent(
                   imageName: 'ob_3.png',
-                  title: 'Latest News',
-                  subTitle: 'Find Out eLancer Latest News',
+                  title: AppLocalizations.of(context)!.outBoardingScreen_page_2_title,
+                  subTitle: AppLocalizations.of(context)!.outBoardingScreen_page_2_subTitle,
                 ),
                 OutBoardingContent(
                   imageName: 'ob_2.png',
-                  title: 'Discover More',
-                  subTitle: 'Achievements, Staff & Much More!',
+                  title: AppLocalizations.of(context)!.outBoardingScreen_page_3_title,
+                  subTitle: AppLocalizations.of(context)!.outBoardingScreen_page_3_subTitle,
                 ),
               ],
             ),
@@ -111,7 +112,7 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                         );
                       },
                 child: Text(
-                  _currentPage == 2 ? ' START' : '  NEXT',
+                  _currentPage == 2 ? AppLocalizations.of(context)!.outBoardingScreen_startButton : AppLocalizations.of(context)!.outBoardingScreen_nextButton,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16.sp,
@@ -120,13 +121,13 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                   textAlign: TextAlign.center,
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff42C6A5),
+                  primary: const Color(0xfff9a42f),
                   minimumSize: Size(99.w, 48.h),
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(50.r),
-                      topLeft: Radius.circular(50.r),
+                    borderRadius: BorderRadiusDirectional.only(
+                      bottomStart: Radius.circular(50.r),
+                      topStart: Radius.circular(50.r),
                     ),
                   ),
                 ),

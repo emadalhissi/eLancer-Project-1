@@ -15,7 +15,7 @@ class OutBoardingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: selected ? const Color(0xff33354E) : const Color(0xffD2CBCB),
+        color: selected ? const Color(0xff0980c6) : const Color(0xffD2CBCB),
         borderRadius: BorderRadius.circular(10.r),
       ),
       margin: EdgeInsetsDirectional.only(end: marginEnd),

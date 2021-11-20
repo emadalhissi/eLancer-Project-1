@@ -18,7 +18,7 @@ class OutBoardingContent extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          top: 80.h,
+          top: 60.h,
           child: Container(
             padding: EdgeInsets.only(left: 37.w, right: 37.w),
             child: Column(
@@ -32,7 +32,7 @@ class OutBoardingContent extends StatelessWidget {
                     color: const Color(0xff373737),
                   ),
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 5),
                 Text(
                   subTitle,
                   style: TextStyle(

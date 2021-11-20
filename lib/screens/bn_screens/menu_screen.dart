@@ -1,6 +1,7 @@
 import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:elancer_project_1/widgets/menu_screen_list_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _MenuScreenState extends State<MenuScreen> {
           child: Column(
             children: [
               MenuScreenListTile(
-                title: 'My Profile',
+                title: AppLocalizations.of(context)!.menuScreen_myProfileTitle,
                 icon: Icons.account_circle,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
@@ -40,7 +41,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 height: 20,
               ),
               MenuScreenListTile(
-                title: 'Work Staff',
+                title: AppLocalizations.of(context)!.menuScreen_workStaffTitle,
                 icon: Icons.work,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
@@ -51,7 +52,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 },
               ),
               MenuScreenListTile(
-                title: 'Founder',
+                title: AppLocalizations.of(context)!.menuScreen_founderTitle,
                 icon: Icons.monetization_on_sharp,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
@@ -69,7 +70,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 height: 20,
               ),
               MenuScreenListTile(
-                title: 'eLancer News',
+                title: AppLocalizations.of(context)!.menuScreen_eLancerNewsTitle,
                 icon: Icons.watch_later_sharp,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
@@ -80,7 +81,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 },
               ),
               MenuScreenListTile(
-                title: 'Settings',
+                title: AppLocalizations.of(context)!.menuScreen_settingsTitle,
                 icon: Icons.settings,
                 circleAvatarBGColor: Color(0xff039fe1),
                 onTab: () {
@@ -98,7 +99,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 height: 20,
               ),
               MenuScreenListTile(
-                title: 'About Developer',
+                title: AppLocalizations.of(context)!.menuScreen_aboutDeveloperTitle,
                 icon: Icons.announcement,
                 circleAvatarBGColor: Colors.green.shade400,
                 onTab: () {
@@ -129,7 +130,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
                 contentPadding: EdgeInsets.symmetric(horizontal: 5),
                 title: Text(
-                  'Logout',
+                  AppLocalizations.of(context)!.menuScreen_logoutTitle,
                   style: TextStyle(
                     color: Color(0xff7B7B81),
                     letterSpacing: 1,

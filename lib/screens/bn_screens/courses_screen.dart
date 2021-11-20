@@ -37,7 +37,7 @@ class _CoursesScreenState extends State<CoursesScreen> {
             CourseCard(
               courseImage: 'images/ui-design.png',
               courseName: 'UX UI',
-              courseTrainer: 'Bashar Luzon',
+              courseTrainer: 'Bashar LuzonLuzonLuzon',
               courseHours: '90',
               courseRating: '4.8',
             ),

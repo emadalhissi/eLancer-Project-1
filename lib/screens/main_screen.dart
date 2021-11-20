@@ -8,6 +8,7 @@ import 'package:elancer_project_1/widgets/app_bar.dart';
 import 'package:elancer_project_1/widgets/bn_widgets/bnb_active_icon.dart';
 import 'package:elancer_project_1/widgets/bn_widgets/bnb_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -19,16 +20,28 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 2;
 
-  final List<BnScreen> _bnScreens = <BnScreen>[
-    BnScreen(title: 'Menu', widget: const MenuScreen()),
-    BnScreen(title: 'About eLancer', widget: const AboutELancerScreen()),
-    BnScreen(title: 'Home', widget: const HomeScreen()),
-    BnScreen(title: 'Courses', widget: const CoursesScreen()),
-    BnScreen(title: 'Achievements', widget: const AchievementsScreen()),
-  ];
+
 
   @override
   Widget build(BuildContext context) {
+    final List<BnScreen> _bnScreens = <BnScreen>[
+      BnScreen(
+          title: AppLocalizations.of(context)!.mainScreen_menuScreenTitle,
+          widget: const MenuScreen()),
+      BnScreen(
+          title: AppLocalizations.of(context)!.mainScreen_aboutELancerScreenTitle,
+          widget: const AboutELancerScreen()),
+      BnScreen(
+          title: AppLocalizations.of(context)!.mainScreen_homeScreenTitle,
+          widget: const HomeScreen()),
+      BnScreen(
+          title: AppLocalizations.of(context)!.mainScreen_coursesScreenTitle,
+          widget: const CoursesScreen()),
+
+      BnScreen(
+          title: AppLocalizations.of(context)!.mainScreen_achievementsScreenTitle,
+          widget: const AchievementsScreen()),
+    ];
     return Scaffold(
       // extendBodyBehindAppBar: true,
       // resizeToAvoidBottomInset: false,

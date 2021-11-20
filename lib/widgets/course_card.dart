@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CourseCard extends StatefulWidget {
@@ -26,9 +27,9 @@ class _CourseCardState extends State<CourseCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 0),
+      margin: EdgeInsets.symmetric(vertical: 5),
       width: MediaQuery.of(context).size.width,
-      height: 130,
+      // height: 130,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -96,72 +97,79 @@ class _CourseCardState extends State<CourseCard> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.courseName,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 1,
-                  ),
-                ),
-                SizedBox(height: 4),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'By ${widget.courseTrainer}',
-                      style: TextStyle(
-                        fontSize: 12,
-                        letterSpacing: 0,
-                        color: Color(0xffA1A1A1),
-                      ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 15),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.courseName,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      letterSpacing: 1,
                     ),
-                    SizedBox(width: 12),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(
-                          Icons.access_time,
-                          color: Color(0xffA1A1A1),
-                        ),
-                        SizedBox(width: 4),
-                        Text(
-                          '${widget.courseHours} Hours',
+                  ),
+                  // SizedBox(height: 4),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'By ${widget.courseTrainer}',
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 12,
                             letterSpacing: 0,
                             color: Color(0xffA1A1A1),
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Color(0xffFBB344),
-                    ),
-                    SizedBox(width: 5),
-                    Text(
-                      widget.courseRating,
-                      style: TextStyle(
-                        fontSize: 12,
-                        letterSpacing: 0,
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      // SizedBox(width: 12),
+                      // Spacer(),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Icon(
+                              Icons.access_time,
+                              color: Color(0xffA1A1A1),
+                            ),
+                            SizedBox(width: 4),
+                            Text(
+                              '${widget.courseHours} Hours',
+                              style: TextStyle(
+                                fontSize: 12,
+                                letterSpacing: 0,
+                                color: Color(0xffA1A1A1),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  // SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Color(0xffFBB344),
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        widget.courseRating,
+                        style: TextStyle(
+                          fontSize: 12,
+                          letterSpacing: 0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],
