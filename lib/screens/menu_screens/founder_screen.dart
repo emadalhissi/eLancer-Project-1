@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FounderScreen extends StatefulWidget {
   const FounderScreen({Key? key}) : super(key: key);
@@ -9,14 +10,12 @@ class FounderScreen extends StatefulWidget {
 
 class _FounderScreenState extends State<FounderScreen> {
   @override
-  final String info =
-      'The Drosos Foundation strives to enable people in difficult situations to live in dignity. The Foundation, in cooperation with partner institutions, develops and supports projects that focus on strengthening the life skills of young people, by encouraging creativity and economic independence. The Foundation is active in Switzerland, Eastern Germany, Egypt, Jordan, Lebanon, Morocco, Palestine and Tunisia. The Foundation\'s distinguished approach to sustainability has made it a renowned international partner in the field of development. The institution is ideologically, politically and religiously independent.';
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Founder',
+          AppLocalizations.of(context)!.founderScreen_screenMainTitle,
           style: TextStyle(
             color: Colors.grey.shade800,
           ),
@@ -70,16 +69,17 @@ class _FounderScreenState extends State<FounderScreen> {
             child: Column(
               children: [
                 Text(
-                  'DROSOS',
+                  AppLocalizations.of(context)!.founderScreen_drososName,
                   style: TextStyle(
                     color: Colors.grey.shade800,
                     fontSize: 20,
                     fontFamily: 'Roboto',
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  info,
+                  AppLocalizations.of(context)!.founderScreen_about,
                   style: TextStyle(
                     color: Colors.grey.shade800,
                     fontSize: 18,

@@ -8,7 +8,7 @@ enum SPKeys {
   password,
   fullName,
   dateOfBirth,
-  lang,
+  language,
   gender,
   address,
   notifications,
@@ -31,6 +31,12 @@ class SharedPreferencesController {
   Future<void> initSharedPreferences() async {
     _sharedPrefLibObj = await SharedPreferences.getInstance();
   }
+
+  Future<void> setLanguage({required String language}) async {
+    await _sharedPrefLibObj.setString(SPKeys.language.toString(), language);
+  }
+
+  String get checkLanguage => _sharedPrefLibObj.getString(SPKeys.language.toString()) ?? 'en';
 
   Future<void> setFirstVisit() async {
     await _sharedPrefLibObj.setBool(SPKeys.firstVisit.toString(), false);

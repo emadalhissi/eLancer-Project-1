@@ -70,7 +70,7 @@ class _EnterNameScreenState extends State<EnterNameScreen> {
                       },
                     );
                   },
-                  showCursor: false,
+                  showCursor: true,
                   decoration: InputDecoration(
                     // hintText: 'Full Name...',
                     hintText: AppLocalizations.of(context)!

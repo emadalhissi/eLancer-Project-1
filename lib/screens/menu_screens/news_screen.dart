@@ -1,5 +1,6 @@
 import 'package:elancer_project_1/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NewsScreen extends StatefulWidget {
   const NewsScreen({Key? key}) : super(key: key);
@@ -48,7 +49,7 @@ class _NewsScreenState extends State<NewsScreen> {
             ),
           ],
         ),
-        title: Text('eLancer News'),
+        title: Text(AppLocalizations.of(context)!.newsScreen_screenMainTitle),
         actions: [
           // IconButton(
           //   onPressed: hasFirstActionsIcon ? (){} : null,

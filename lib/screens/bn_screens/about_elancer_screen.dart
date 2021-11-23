@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutELancerScreen extends StatefulWidget {
   const AboutELancerScreen({Key? key}) : super(key: key);
@@ -13,21 +14,6 @@ class AboutELancerScreen extends StatefulWidget {
 class _AboutELancerScreenState extends State<AboutELancerScreen> {
   final String _eLancerWebsite = 'https://www.elancer.ps/';
   final String _eLancerFbPage = 'https://www.facebook.com/elancerpalestine/';
-
-  final String _drosos = 'Drosos';
-  final String _aboutInfo1 =
-      'This project is implemented by UCAS Technology Incubator in partnership with ';
-  final String _aboutInfo2 =
-      'The Online Freelancing Project “eLancer” aims to spread the culture of online freelancing for youth, through awareness-raising workshops and providing technical and mentoring and online freelancing training programs in field of work that are compatible with their skills and abilities, while providing co-working spaces in an equipped environment to increase their income and their online work.';
-  final String _aboutInfo3 =
-      'The project is also concerned with developing a set of educational tools in technical fields and providing them through an online platform. eLacner Project main Goal: Changing of the traditional job employment mindset for the graduates in Gaza Strip towards online freelancing. The project goal can be achieved through the following objectives:';
-  final List<String> _objectives = <String>[
-    '1) Improving graduates\' self-learning skills by providing them with educational resources via the Internet.',
-    '2) Providing technical, freelancing, and soft skills training.',
-    '3) Increasing the income and work opportunities of graduates through online freelancing.',
-    '4) Raising the competitive competence of graduates by integrating them into a global competitive work environment.',
-    '5) Enhancing cooperation and partnership with public sector institutions and parties related to the activities and outputs of the project.',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -62,20 +48,22 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: _aboutInfo1,
+                            text: AppLocalizations.of(context)!.aboutELancerScreen_paragraphNo1_beforeButton,
                             style: TextStyle(
                               color: Colors.grey.shade800,
                               fontSize: 19,
                               fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           TextSpan(
-                            text: _drosos,
+                            text: AppLocalizations.of(context)!.aboutELancerScreen_drososButton,
                             style: TextStyle(
                               color: Colors.blue.shade800,
                               fontSize: 19,
                               fontFamily: 'Roboto',
                               decoration: TextDecoration.underline,
+                              fontWeight: FontWeight.bold,
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
@@ -89,11 +77,12 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                               },
                           ),
                           TextSpan(
-                            text: ' Foundation.',
+                            text: AppLocalizations.of(context)!.aboutELancerScreen_paragraphNo1_afterButton,
                             style: TextStyle(
                               color: Colors.grey.shade800,
                               fontSize: 19,
                               fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],
@@ -137,25 +126,28 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
               // SizedBox(height: 20),
               SizedBox(height: 15),
               Text(
-                _aboutInfo2,
+                AppLocalizations.of(context)!.aboutELancerScreen_paragraphNo2,
                 style: TextStyle(
                   color: Colors.grey.shade800,
                   fontSize: 15,
                 ),
               ),
               SizedBox(height: 15),
-              Text(
-                _aboutInfo3,
-                style: TextStyle(
-                  color: Colors.grey.shade800,
-                  fontSize: 15,
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  AppLocalizations.of(context)!.aboutELancerScreen_paragraphNo3,
+                  style: TextStyle(
+                    color: Colors.grey.shade800,
+                    fontSize: 15,
+                  ),
                 ),
               ),
               SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
-                  _objectives[0],
+                  AppLocalizations.of(context)!.aboutELancerScreen_objectiveNo1,
                   style: TextStyle(
                     color: Colors.grey.shade800,
                     fontSize: 15,
@@ -166,7 +158,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
-                  _objectives[1],
+                  AppLocalizations.of(context)!.aboutELancerScreen_objectiveNo2,
                   style: TextStyle(
                     color: Colors.grey.shade800,
                     fontSize: 15,
@@ -177,7 +169,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
-                  _objectives[2],
+                  AppLocalizations.of(context)!.aboutELancerScreen_objectiveNo3,
                   style: TextStyle(
                     color: Colors.grey.shade800,
                     fontSize: 15,
@@ -188,7 +180,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
-                  _objectives[3],
+                  AppLocalizations.of(context)!.aboutELancerScreen_objectiveNo4,
                   style: TextStyle(
                     color: Colors.grey.shade800,
                     fontSize: 15,
@@ -199,7 +191,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
-                  _objectives[4],
+                  AppLocalizations.of(context)!.aboutELancerScreen_objectiveNo5,
                   style: TextStyle(
                     color: Colors.grey.shade800,
                     fontSize: 15,

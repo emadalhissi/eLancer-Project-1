@@ -1,5 +1,6 @@
 import 'package:elancer_project_1/widgets/work_staff_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WorkStaffScreen extends StatefulWidget {
   const WorkStaffScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _WorkStaffScreenState extends State<WorkStaffScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Work Staff',
+          AppLocalizations.of(context)!.workStaffScreen_screenMainTitle,
           style: TextStyle(
             color: Colors.grey.shade800,
           ),
@@ -49,15 +50,15 @@ class _WorkStaffScreenState extends State<WorkStaffScreen> {
             children: [
               WorkStaffCard(
                 image: 'images/woman.png',
-                name: 'Doa\'a Seyam',
-                position: 'Project Manager',
+                name: AppLocalizations.of(context)!.workStaffScreen_firstContainerName,
+                position: AppLocalizations.of(context)!.workStaffScreen_firstContainerPosition,
                 facebookPage:
                     'https://www.facebook.com/profile.php?id=100013398008625',
               ),
               WorkStaffCard(
                 image: 'images/man.png',
-                name: 'Mohammed AbuHassira',
-                position: 'Project Coordinator',
+                name: AppLocalizations.of(context)!.workStaffScreen_secondContainerName,
+                position: AppLocalizations.of(context)!.workStaffScreen_secondContainerPosition,
                 facebookPage: 'https://www.facebook.com/abuhassira.mohammed',
                 email: 'mhassira@ucas.edu.ps',
                 number: '+970597407401',

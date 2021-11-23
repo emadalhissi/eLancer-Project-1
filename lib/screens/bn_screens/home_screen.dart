@@ -19,13 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
         // mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            children: [
-              Text(
-                'Welcome, ' + SharedPreferencesController().getFullName,
-                style: TextStyle(fontSize: 24),
-              ),
-            ],
+          Text(
+            'Welcome, ' + SharedPreferencesController().getFullName,
+            style: const TextStyle(fontSize: 24),
+            textAlign: TextAlign.center,
           ),
           Spacer(),
           Image(

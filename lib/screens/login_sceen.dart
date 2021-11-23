@@ -15,11 +15,16 @@ class _LoginScreenState extends State<LoginScreen> with Helpers {
   late TextEditingController _usernameOrEmailEditingController;
   late TextEditingController _passwordEditingController;
 
+  bool _showPassword = false;
+  bool _visibility = true;
+
   @override
   void initState() {
     super.initState();
     _usernameOrEmailEditingController = TextEditingController();
     _passwordEditingController = TextEditingController();
+    // _showPassword;
+    // _visibility;
   }
 
   @override
@@ -99,9 +104,23 @@ class _LoginScreenState extends State<LoginScreen> with Helpers {
                     });
                   },
                   showCursor: true,
-                  obscureText: true,
+                  obscureText: _showPassword ? false : true,
                   obscuringCharacter: '*',
                   decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      splashColor: Colors.grey.shade300,
+                      onPressed: () {
+                        setState(() {
+                          _visibility
+                              ? _visibility = false
+                              : _visibility = true;
+                          _showPassword
+                              ? _showPassword = false
+                              : _showPassword = true;
+                        });
+                      },
+                      icon: Icon(_visibility ? Icons.visibility : Icons.visibility_off),
+                    ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: const Color(0xffE5E5E5),
@@ -211,7 +230,11 @@ class _LoginScreenState extends State<LoginScreen> with Helpers {
             SharedPreferencesController().getPassword) {
       return true;
     } else {
-      showSnackBar(context: context, message: 'Check Entered Data!', error: true);
+      showSnackBar(
+        context: context,
+        message: AppLocalizations.of(context)!.general_snackBarCheckEnteredData,
+        error: true,
+      );
       return false;
     }
   }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutDeveloperScreen extends StatefulWidget {
   const AboutDeveloperScreen({Key? key}) : super(key: key);
@@ -13,13 +14,13 @@ class AboutDeveloperScreen extends StatefulWidget {
 }
 
 class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
-  String _facebookUrl = 'https://www.facebook.com/EmadAlhissi/';
-  String _instagramUrl = 'https://www.instagram.com/EmadAlhissi/';
-  String _whatsAppUrl = 'https://wa.me/972599680798';
-  String _youTubeUrl =
+  final String _facebookUrl = 'https://www.facebook.com/EmadAlhissi/';
+  final String _instagramUrl = 'https://www.instagram.com/EmadAlhissi/';
+  final String _whatsAppUrl = 'https://wa.me/972599680798';
+  final String _youTubeUrl =
       'https://www.youtube.com/channel/UCjB_UqtT5lYVGqKTQZ-qhgw';
-  String _phoneNumber = 'tel:+972599680798';
-  String _email = 'mailto:emadalhissi@gmail.com';
+  final String _phoneNumber = 'tel:+972599680798';
+  final String _email = 'mailto:emadalhissi@gmail.com';
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
-          'About Developer',
+          AppLocalizations.of(context)!.aboutDeveloperScreen_screenMainTitle,
           style: TextStyle(
             color: Colors.grey.shade800,
           ),
@@ -84,16 +85,17 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
                       Column(
                         children: [
                           Text(
-                            'Emad Alhissi',
+                            AppLocalizations.of(context)!.aboutDeveloperScreen_developerName,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 21,
                               letterSpacing: 1,
+                              fontFamily: 'Tajawal',
                             ),
                           ),
                           SizedBox(height: 15),
                           Text(
-                            'Mobile Developer',
+                            AppLocalizations.of(context)!.aboutDeveloperScreen_developerField,
                             style: TextStyle(
                               // fontStyle: FontStyle.normal,
                               fontSize: 16,
@@ -128,26 +130,26 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
                     children: [
                       AboutDeveloperListTile(
                         icon: Icons.phone_android_outlined,
-                        title: 'Mobile',
-                        subTitle: '+972599680798',
-                        buttonText: 'Call Now',
+                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_mobileTitle,
+                        subTitle: '00972599680798',
+                        buttonText: AppLocalizations.of(context)!.aboutDeveloperScreen_callNowButton,
                         launchUrl: _phoneNumber,
                       ),
                       AboutDeveloperListTile(
                         icon: Icons.email,
-                        title: 'Email',
+                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_emailTitle,
                         subTitle: 'emadalhissi@gmail.com',
-                        buttonText: 'Send Email',
+                        buttonText: AppLocalizations.of(context)!.aboutDeveloperScreen_sendEmailButton,
                         launchUrl: _email,
                       ),
                       AboutDeveloperListTile(
                         icon: Icons.location_on_sharp,
-                        title: 'Address',
-                        subTitle: 'Gaza, Palestine',
+                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_addressTitle,
+                        subTitle: AppLocalizations.of(context)!.aboutDeveloperScreen_addressSubTitle,
                       ),
                       AboutDeveloperListTile(
                         icon: Icons.date_range,
-                        title: 'D.O.B',
+                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_dateOfBirthTitle,
                         subTitle: '22-01-2021',
                       ),
                     ],

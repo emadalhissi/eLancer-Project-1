@@ -15,6 +15,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   late TextEditingController _emailEditingController;
   late TextEditingController _passwordEditingController;
 
+  bool _showPassword = false;
+  bool _visibility = true;
+
   @override
   void initState() {
     super.initState();
@@ -131,10 +134,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       _passwordEditingController;
                     });
                   },
-                  obscureText: true,
+                  obscureText: _showPassword ? false : true,
                   obscuringCharacter: '*',
                   showCursor: true,
                   decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      splashColor: Colors.grey.shade300,
+                      onPressed: () {
+                        setState(() {
+                          _visibility
+                              ? _visibility = false
+                              : _visibility = true;
+                          _showPassword
+                              ? _showPassword = false
+                              : _showPassword = true;
+                        });
+                      },
+                      icon: Icon(_visibility ? Icons.visibility : Icons.visibility_off),
+                    ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: const Color(0xffE5E5E5),

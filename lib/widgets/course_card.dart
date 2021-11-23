@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CourseCard extends StatefulWidget {
   const CourseCard({
@@ -118,7 +119,7 @@ class _CourseCardState extends State<CourseCard> {
                     children: [
                       Expanded(
                         child: Text(
-                          'By ${widget.courseTrainer}',
+                          widget.courseTrainer,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 12,
@@ -139,7 +140,7 @@ class _CourseCardState extends State<CourseCard> {
                             ),
                             SizedBox(width: 4),
                             Text(
-                              '${widget.courseHours} Hours',
+                              '${widget.courseHours} ' + AppLocalizations.of(context)!.coursesScreen_hours,
                               style: TextStyle(
                                 fontSize: 12,
                                 letterSpacing: 0,
