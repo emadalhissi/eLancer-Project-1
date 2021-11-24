@@ -37,7 +37,7 @@ class AboutDeveloperListTile extends StatelessWidget {
       ),
       subtitle: Text(
         subTitle,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.blueGrey,
           letterSpacing: 0,
           fontSize: 10,
@@ -48,7 +48,7 @@ class AboutDeveloperListTile extends StatelessWidget {
         onPressed: () => launchURL(launchUrl),
         child: Text(
           buttonText,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xff0597db),
             fontSize: 12,
           ),

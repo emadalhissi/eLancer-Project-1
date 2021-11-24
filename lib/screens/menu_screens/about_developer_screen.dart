@@ -2,7 +2,6 @@ import 'package:elancer_project_1/widgets/about_developer_list_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -41,13 +40,13 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
         leading: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: CircleAvatar(
-            backgroundColor: Color(0xff0597db),
+            backgroundColor: const Color(0xff0597db),
             radius: 40,
             child: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
                 size: 30,
@@ -64,12 +63,12 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 80),
+                  const SizedBox(height: 80),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 55,
                         backgroundColor: Color(0xff0c6fb8),
                         child: CircleAvatar(
@@ -81,22 +80,24 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 30),
+                      const SizedBox(width: 30),
                       Column(
                         children: [
                           Text(
-                            AppLocalizations.of(context)!.aboutDeveloperScreen_developerName,
-                            style: TextStyle(
+                            AppLocalizations.of(context)!
+                                .aboutDeveloperScreen_developerName,
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 21,
                               letterSpacing: 1,
                               fontFamily: 'Tajawal',
                             ),
                           ),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                           Text(
-                            AppLocalizations.of(context)!.aboutDeveloperScreen_developerField,
-                            style: TextStyle(
+                            AppLocalizations.of(context)!
+                                .aboutDeveloperScreen_developerField,
+                            style: const TextStyle(
                               // fontStyle: FontStyle.normal,
                               fontSize: 16,
                               color: Colors.blueGrey,
@@ -111,7 +112,7 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
               ),
               width: MediaQuery.of(context).size.width,
               height: 300,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xfffec32a),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50),
@@ -124,32 +125,39 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
               height: MediaQuery.of(context).size.height / 2,
               color: Colors.white,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 50),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 50),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
                       AboutDeveloperListTile(
                         icon: Icons.phone_android_outlined,
-                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_mobileTitle,
+                        title: AppLocalizations.of(context)!
+                            .aboutDeveloperScreen_mobileTitle,
                         subTitle: '00972599680798',
-                        buttonText: AppLocalizations.of(context)!.aboutDeveloperScreen_callNowButton,
+                        buttonText: AppLocalizations.of(context)!
+                            .aboutDeveloperScreen_callNowButton,
                         launchUrl: _phoneNumber,
                       ),
                       AboutDeveloperListTile(
                         icon: Icons.email,
-                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_emailTitle,
+                        title: AppLocalizations.of(context)!
+                            .aboutDeveloperScreen_emailTitle,
                         subTitle: 'emadalhissi@gmail.com',
-                        buttonText: AppLocalizations.of(context)!.aboutDeveloperScreen_sendEmailButton,
+                        buttonText: AppLocalizations.of(context)!
+                            .aboutDeveloperScreen_sendEmailButton,
                         launchUrl: _email,
                       ),
                       AboutDeveloperListTile(
                         icon: Icons.location_on_sharp,
-                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_addressTitle,
-                        subTitle: AppLocalizations.of(context)!.aboutDeveloperScreen_addressSubTitle,
+                        title: AppLocalizations.of(context)!
+                            .aboutDeveloperScreen_addressTitle,
+                        subTitle: AppLocalizations.of(context)!
+                            .aboutDeveloperScreen_addressSubTitle,
                       ),
                       AboutDeveloperListTile(
                         icon: Icons.date_range,
-                        title: AppLocalizations.of(context)!.aboutDeveloperScreen_dateOfBirthTitle,
+                        title: AppLocalizations.of(context)!
+                            .aboutDeveloperScreen_dateOfBirthTitle,
                         subTitle: '22-01-2021',
                       ),
                     ],
@@ -169,7 +177,7 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
                     radius: 33,
                     child: IconButton(
                       onPressed: () => launchURL(_facebookUrl),
-                      icon: Image(
+                      icon: const Image(
                         image: AssetImage('images/facebook-logo.png'),
                         fit: BoxFit.fill,
                         width: 50,
@@ -179,12 +187,12 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
                     ),
                     backgroundColor: Colors.transparent,
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   CircleAvatar(
                     radius: 33,
                     child: IconButton(
                       onPressed: () => launchURL(_instagramUrl),
-                      icon: Image(
+                      icon: const Image(
                         image: AssetImage('images/instagram.png'),
                         fit: BoxFit.fill,
                         width: 50,
@@ -194,12 +202,12 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
                     ),
                     backgroundColor: Colors.transparent,
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   CircleAvatar(
                     radius: 35,
                     child: IconButton(
                       onPressed: () => launchURL(_whatsAppUrl),
-                      icon: Image(
+                      icon: const Image(
                         image: AssetImage('images/whatsapp.png'),
                         fit: BoxFit.fill,
                         width: 60,
@@ -209,12 +217,12 @@ class _AboutDeveloperScreenState extends State<AboutDeveloperScreen> {
                     ),
                     backgroundColor: Colors.transparent,
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   CircleAvatar(
                     radius: 35,
                     child: IconButton(
                       onPressed: () => launchURL(_youTubeUrl),
-                      icon: Image(
+                      icon: const Image(
                         image: AssetImage('images/youtube.png'),
                         fit: BoxFit.fill,
                         width: 55,

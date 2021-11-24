@@ -18,14 +18,14 @@ class _MenuScreenState extends State<MenuScreen> {
       height: MediaQuery.of(context).size.height,
       color: Colors.white,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
               MenuScreenListTile(
                 title: AppLocalizations.of(context)!.menuScreen_myProfileTitle,
                 icon: Icons.account_circle,
-                circleAvatarBGColor: Color(0xff039fe1),
+                circleAvatarBGColor: const Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
                     context,
@@ -43,7 +43,7 @@ class _MenuScreenState extends State<MenuScreen> {
               MenuScreenListTile(
                 title: AppLocalizations.of(context)!.menuScreen_workStaffTitle,
                 icon: Icons.work,
-                circleAvatarBGColor: Color(0xff039fe1),
+                circleAvatarBGColor: const Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
                     context,
@@ -54,7 +54,7 @@ class _MenuScreenState extends State<MenuScreen> {
               MenuScreenListTile(
                 title: AppLocalizations.of(context)!.menuScreen_founderTitle,
                 icon: Icons.monetization_on_sharp,
-                circleAvatarBGColor: Color(0xff039fe1),
+                circleAvatarBGColor: const Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
                     context,
@@ -72,7 +72,7 @@ class _MenuScreenState extends State<MenuScreen> {
               MenuScreenListTile(
                 title: AppLocalizations.of(context)!.menuScreen_eLancerNewsTitle,
                 icon: Icons.watch_later_sharp,
-                circleAvatarBGColor: Color(0xff039fe1),
+                circleAvatarBGColor: const Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
                     context,
@@ -83,7 +83,7 @@ class _MenuScreenState extends State<MenuScreen> {
               MenuScreenListTile(
                 title: AppLocalizations.of(context)!.menuScreen_settingsTitle,
                 icon: Icons.settings,
-                circleAvatarBGColor: Color(0xff039fe1),
+                circleAvatarBGColor: const Color(0xff039fe1),
                 onTab: () {
                   Navigator.pushNamed(
                     context,
@@ -118,20 +118,20 @@ class _MenuScreenState extends State<MenuScreen> {
               ),
               ListTile(
                 onTap: (){
-                  Future.delayed(Duration(seconds: 1), (){
+                  Future.delayed(const Duration(seconds: 1), (){
                     logout();
                     Navigator.pushNamed(context, '/login_screen');
                   });
                 },
                 leading: CircleAvatar(
                   backgroundColor: Colors.red.shade400,
-                  child: Icon(Icons.logout_outlined, color: Colors.white, size: 25,),
+                  child: const Icon(Icons.logout_outlined, color: Colors.white, size: 25,),
                   radius: 25,
                 ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 5),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 5),
                 title: Text(
                   AppLocalizations.of(context)!.menuScreen_logoutTitle,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xff7B7B81),
                     letterSpacing: 1,
                   ),

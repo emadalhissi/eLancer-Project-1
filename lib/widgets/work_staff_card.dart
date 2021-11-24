@@ -22,12 +22,12 @@ class WorkStaffCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
         borderRadius: BorderRadius.circular(25),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.grey,
             blurRadius: 5,
@@ -41,32 +41,32 @@ class WorkStaffCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Spacer(),
+          const Spacer(),
           CircleAvatar(
             radius: 55,
             backgroundImage: AssetImage(image),
             backgroundColor: Colors.transparent,
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             name,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
               letterSpacing: 1,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             position,
-            style: TextStyle(
+            style: const TextStyle(
               // fontStyle: FontStyle.normal,
               fontSize: 15,
               color: Colors.blueGrey,
               letterSpacing: 0,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -76,7 +76,7 @@ class WorkStaffCard extends StatelessWidget {
                   onPressed: facebookPage != ''
                       ? () => launchURL(facebookPage)
                       : () {},
-                  icon: Image(
+                  icon: const Image(
                     image: AssetImage('images/facebook-logo.png'),
                     fit: BoxFit.fill,
                     width: 50,
@@ -91,7 +91,7 @@ class WorkStaffCard extends StatelessWidget {
                 child: IconButton(
                   onPressed:
                       email != '' ? () => launchURL('mailto:$email') : () {},
-                  icon: Image(
+                  icon: const Image(
                     image: AssetImage('images/email.png'),
                     fit: BoxFit.fill,
                     width: 50,
@@ -106,7 +106,7 @@ class WorkStaffCard extends StatelessWidget {
                 child: IconButton(
                   onPressed:
                       number != '' ? () => launchURL('tel:$number') : () {},
-                  icon: Image(
+                  icon: const Image(
                     image: AssetImage('images/phone.png'),
                     fit: BoxFit.fill,
                     width: 50,
@@ -118,7 +118,7 @@ class WorkStaffCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
         ],
       ),
     );

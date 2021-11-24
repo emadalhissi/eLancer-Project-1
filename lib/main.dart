@@ -23,7 +23,6 @@ import 'package:elancer_project_1/shared_preferences/shared_preferences_controll
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -51,7 +50,7 @@ class _MyAppState extends State<MyApp> {
               create: (context) => LangProvider(),
             ),
           ],
-          child: MyMaterialApp(),
+          child: const MyMaterialApp(),
         ),
       ),
     );

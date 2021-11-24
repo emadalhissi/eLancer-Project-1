@@ -14,12 +14,12 @@ class _AchievementsScreenState extends State<AchievementsScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(
+          const Image(
             image: AssetImage('images/achievement.png'),
             width: 200,
             height: 200,
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Text(
             'COMING SOON',
             style: TextStyle(

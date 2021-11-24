@@ -14,7 +14,7 @@ class _TestLoginScreenState extends State<TestLoginScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('images/food.jpg'),
                 fit: BoxFit.cover,
@@ -28,7 +28,7 @@ class _TestLoginScreenState extends State<TestLoginScreen> {
             // right: 300,
             width: MediaQuery.of(context).size.width,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -42,33 +42,33 @@ class _TestLoginScreenState extends State<TestLoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Login to your account',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     TextField(
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFbdc6cf),
+                        fillColor: const Color(0xFFbdc6cf),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 width: 0, color: Colors.transparent)),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     TextField(
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
-                            borderSide: BorderSide(color: Colors.transparent)),
+                            borderSide: const BorderSide(color: Colors.transparent)),
                         filled: true,
-                        fillColor: Color(0xFFbdc6cf),
-                        border: OutlineInputBorder(
+                        fillColor: const Color(0xFFbdc6cf),
+                        border: const OutlineInputBorder(
                             borderSide: BorderSide(
                                 width: 0, color: Colors.transparent)),
                       ),

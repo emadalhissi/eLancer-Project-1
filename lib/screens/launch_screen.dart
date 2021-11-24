@@ -2,7 +2,6 @@ import 'package:elancer_project_1/shared_preferences/shared_preferences_controll
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class LaunchScreen extends StatefulWidget {
   const LaunchScreen({Key? key}) : super(key: key);
@@ -55,7 +54,7 @@ class _LaunchScreenState
           child: Container(
             // child: SvgPicture.asset('images/elancer_logo.svg'),
             margin: EdgeInsets.symmetric(horizontal: 25.w),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('images/elancer_logo_.png'),
               ),
@@ -63,7 +62,7 @@ class _LaunchScreenState
           ),
           // ),
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Color(0xffd8edf7),

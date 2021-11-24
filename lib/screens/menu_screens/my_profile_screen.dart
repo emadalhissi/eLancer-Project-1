@@ -1,4 +1,3 @@
-import 'package:elancer_project_1/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -18,7 +17,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
         flexibleSpace: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.centerRight,
                   end: Alignment.centerLeft,
@@ -29,7 +28,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 82,
               top: 25,
               child: Image(
@@ -38,7 +37,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 width: 90,
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 140,
               top: -8,
               child: Image(
@@ -50,7 +49,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
           ],
         ),
         title: Text(AppLocalizations.of(context)!.myProfileScreen_screenMainTitle),
-        actions: [
+        actions: const [
           // IconButton(
           //   onPressed: hasFirstActionsIcon ? (){} : null,
           //   icon: Icon(firstActionsIconButton, size: 20),
@@ -67,7 +66,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back, size: 30),
+            icon: const Icon(Icons.arrow_back, size: 30),
           ),
         ),
       ),
@@ -75,12 +74,12 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(
+            const Image(
               image: AssetImage('images/profile.png'),
               width: 200,
               height: 200,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Text(
               'COMING SOON',
               style: TextStyle(

@@ -1,4 +1,3 @@
-import 'package:elancer_project_1/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -18,7 +17,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         flexibleSpace: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.centerRight,
                   end: Alignment.centerLeft,
@@ -29,7 +28,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 82,
               top: 25,
               child: Image(
@@ -38,7 +37,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 width: 90,
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 140,
               top: -8,
               child: Image(
@@ -50,7 +49,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
           ],
         ),
         title: Text(AppLocalizations.of(context)!.notificationsScreen_screenMainTitle),
-        actions: [
+        actions: const [
           // IconButton(
           //   onPressed: hasFirstActionsIcon ? (){} : null,
           //   icon: Icon(firstActionsIconButton, size: 20),
@@ -67,7 +66,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back, size: 30),
+            icon: const Icon(Icons.arrow_back, size: 30),
           ),
         ),
       ),
@@ -75,12 +74,12 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(
+            const Image(
               image: AssetImage('images/notification.png'),
               width: 150,
               height: 150,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Text(
               AppLocalizations.of(context)!.notificationsScreen_nothingNew,
               style: TextStyle(

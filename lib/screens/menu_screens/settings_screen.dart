@@ -1,12 +1,8 @@
 import 'package:elancer_project_1/Providers/lang_provider.dart';
 import 'package:elancer_project_1/main.dart';
-import 'package:elancer_project_1/shared_preferences/shared_preferences_controller.dart';
-import 'package:elancer_project_1/widgets/app_bar.dart';
-import 'package:elancer_project_1/widgets/menu_screen_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -26,7 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         flexibleSpace: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.centerRight,
                   end: Alignment.centerLeft,
@@ -37,7 +33,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 82,
               top: 25,
               child: Image(
@@ -46,7 +42,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 width: 90,
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 140,
               top: -8,
               child: Image(
@@ -59,7 +55,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         title:
             Text(AppLocalizations.of(context)!.settingsScreen_screenMainTitle),
-        actions: [
+        actions: const [
           // IconButton(
           //   onPressed: hasFirstActionsIcon ? (){} : null,
           //   icon: Icon(firstActionsIconButton, size: 20),
@@ -76,7 +72,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back, size: 30),
+            icon: const Icon(Icons.arrow_back, size: 30),
           ),
         ),
       ),
@@ -85,7 +81,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         height: MediaQuery.of(context).size.height,
         color: Colors.white,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -133,17 +129,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     children: [
                                       Align(
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Text(AppLocalizations.of(
                                                   context)!
                                               .settingsScreen_languagePopUpTitle),
                                         ),
                                         alignment: Alignment.center,
                                       ),
-                                      Divider(
+                                      const Divider(
                                         height: 10,
                                       ),
-                                      SizedBox(height: 30),
+                                      const SizedBox(height: 30),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceAround,
@@ -151,14 +147,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           InkWell(
                                             child: Column(
                                               children: [
-                                                CircleAvatar(
+                                                const CircleAvatar(
                                                   backgroundImage: AssetImage(
                                                       'images/saudi_arabia_flag.png'),
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   radius: 30,
                                                 ),
-                                                SizedBox(height: 10),
+                                                const SizedBox(height: 10),
                                                 Text(AppLocalizations.of(
                                                         context)!
                                                     .settingsScreen_languagePopUpArabic),
@@ -184,14 +180,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                           InkWell(
                                             child: Column(
                                               children: [
-                                                CircleAvatar(
+                                                const CircleAvatar(
                                                   backgroundImage: AssetImage(
                                                       'images/usa_flag.png'),
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   radius: 30,
                                                 ),
-                                                SizedBox(height: 10),
+                                                const SizedBox(height: 10),
                                                 Text(AppLocalizations.of(
                                                         context)!
                                                     .settingsScreen_languagePopUpEnglish),
@@ -242,10 +238,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     backgroundImage: AssetImage(flag()),
                     radius: 25,
                   ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 5),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 5),
                   title: Text(
                     AppLocalizations.of(context)!.settingsScreen_language,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xff7B7B81),
                       letterSpacing: 1,
                     ),

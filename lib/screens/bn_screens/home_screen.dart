@@ -12,7 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
       color: Colors.white,
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -24,14 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
             style: const TextStyle(fontSize: 24),
             textAlign: TextAlign.center,
           ),
-          Spacer(),
-          Image(
+          const Spacer(),
+          const Image(
             image: AssetImage('images/welcome.png'),
             width: 200,
             height: 200,
           ),
-          SizedBox(height: 30),
-          Spacer(),
+          const SizedBox(height: 30),
+          const Spacer(),
           Text(
             '',
             style: TextStyle(

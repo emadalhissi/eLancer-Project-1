@@ -28,13 +28,13 @@ class _FounderScreenState extends State<FounderScreen> {
         leading: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: CircleAvatar(
-            backgroundColor: Color(0xff0597db),
+            backgroundColor: const Color(0xff0597db),
             radius: 40,
             child: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
                 size: 30,
@@ -51,7 +51,7 @@ class _FounderScreenState extends State<FounderScreen> {
               shape: BoxShape.rectangle,
               color: Colors.white,
               borderRadius: BorderRadius.circular(25),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.grey,
                   blurRadius: 5,
@@ -77,7 +77,7 @@ class _FounderScreenState extends State<FounderScreen> {
                     fontWeight: FontWeight.bold
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   AppLocalizations.of(context)!.founderScreen_about,
                   style: TextStyle(
@@ -86,11 +86,11 @@ class _FounderScreenState extends State<FounderScreen> {
                     fontFamily: 'Roboto',
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                   width: MediaQuery.of(context).size.width / 2,
                   height: 40,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.transparent,
                     image: DecorationImage(
                       alignment: AlignmentDirectional.bottomEnd,
@@ -99,7 +99,7 @@ class _FounderScreenState extends State<FounderScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
               ],
             ),
           ),

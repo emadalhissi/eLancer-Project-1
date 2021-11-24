@@ -4,7 +4,6 @@ import 'package:elancer_project_1/screens/bn_screens/achievements_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/courses_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/home_screen.dart';
 import 'package:elancer_project_1/screens/bn_screens/menu_screen.dart';
-import 'package:elancer_project_1/widgets/app_bar.dart';
 import 'package:elancer_project_1/widgets/bn_widgets/bnb_active_icon.dart';
 import 'package:elancer_project_1/widgets/bn_widgets/bnb_icon.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
         flexibleSpace: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.centerRight,
                   end: Alignment.centerLeft,
@@ -62,7 +61,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 82,
               top: 25,
               child: Image(
@@ -71,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
                 width: 90,
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 140,
               top: -8,
               child: Image(
@@ -88,7 +87,7 @@ class _MainScreenState extends State<MainScreen> {
             onPressed: () {
               Navigator.pushNamed(context, '/notifications_screen');
             },
-            icon: Icon(Icons.notifications, size: 30),
+            icon: const Icon(Icons.notifications, size: 30),
           ),
         ],
         leading: Padding(
@@ -97,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
             onPressed: () {
               Navigator.pushNamed(context, '/search_screen');
             },
-            icon: Icon(Icons.search, size: 30),
+            icon: const Icon(Icons.search, size: 30),
           ),
         ),
       ),
@@ -117,7 +116,7 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.white,
         elevation: 50,
         type: BottomNavigationBarType.fixed,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: BnbIcon(bnbIcon: Icons.menu),
             label: '',

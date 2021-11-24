@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 
 class MenuScreenListTile extends StatelessWidget {
-  MenuScreenListTile({
+  const MenuScreenListTile({Key? key,
     required this.icon,
     required this.title,
     required this.circleAvatarBGColor,
     required this.onTab,
-  });
+  }) : super(key: key);
 
   final IconData icon;
   final String title;
@@ -17,7 +17,7 @@ class MenuScreenListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 10, top: 5),
+      padding: const EdgeInsets.only(bottom: 10, top: 5),
       child: ListTile(
         onTap: onTab,
         leading: CircleAvatar(
@@ -25,10 +25,10 @@ class MenuScreenListTile extends StatelessWidget {
           child: Icon(icon, color: Colors.white, size: 25,),
           radius: 25,
         ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 5),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 5),
         title: Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xff7B7B81),
             letterSpacing: 1,
           ),

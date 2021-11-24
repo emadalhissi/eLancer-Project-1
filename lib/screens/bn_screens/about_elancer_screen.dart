@@ -25,7 +25,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
             shape: BoxShape.rectangle,
             color: Colors.white,
             borderRadius: BorderRadius.circular(25),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.grey,
                 blurRadius: 5,
@@ -68,7 +68,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 Future.delayed(
-                                  Duration(seconds: 1),
+                                  const Duration(seconds: 1),
                                   () {
                                     Navigator.pushNamed(
                                         context, '/founder_screen');
@@ -95,7 +95,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                         radius: 25,
                         child: IconButton(
                           onPressed: () => launchURL(_eLancerFbPage),
-                          icon: Image(
+                          icon: const Image(
                             image: AssetImage('images/facebook-logo.png'),
                             fit: BoxFit.fill,
                             width: 50,
@@ -109,7 +109,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                         radius: 25,
                         child: IconButton(
                           onPressed: () => launchURL(_eLancerWebsite),
-                          icon: Image(
+                          icon: const Image(
                             image: AssetImage('images/www.png'),
                             fit: BoxFit.fill,
                             width: 50,
@@ -124,7 +124,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                 ],
               ),
               // SizedBox(height: 20),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Text(
                 AppLocalizations.of(context)!.aboutELancerScreen_paragraphNo2,
                 style: TextStyle(
@@ -132,7 +132,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   fontSize: 15,
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Align(
                 alignment: Alignment.centerRight,
                 child: Text(
@@ -143,7 +143,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
@@ -154,7 +154,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
@@ -165,7 +165,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
@@ -176,7 +176,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
@@ -187,7 +187,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
@@ -198,7 +198,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -207,7 +207,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.transparent,
                         image: DecorationImage(
                           image: AssetImage('images/elancer_logo_.png'),
@@ -216,12 +216,12 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 30),
+                  const SizedBox(width: 30),
                   Expanded(
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.transparent,
                         image: DecorationImage(
                           alignment: AlignmentDirectional.bottomEnd,
@@ -233,7 +233,7 @@ class _AboutELancerScreenState extends State<AboutELancerScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ),

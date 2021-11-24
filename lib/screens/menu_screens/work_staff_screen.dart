@@ -28,13 +28,13 @@ class _WorkStaffScreenState extends State<WorkStaffScreen> {
         leading: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: CircleAvatar(
-            backgroundColor: Color(0xff0597db),
+            backgroundColor: const Color(0xff0597db),
             radius: 40,
             child: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
                 size: 30,

@@ -28,7 +28,7 @@ class _CourseCardState extends State<CourseCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       width: MediaQuery.of(context).size.width,
       // height: 130,
       child: Row(
@@ -36,14 +36,14 @@ class _CourseCardState extends State<CourseCard> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 15),
             width: 110,
             height: 100,
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               color: Colors.transparent,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.grey,
                   blurRadius: 5,
@@ -100,14 +100,14 @@ class _CourseCardState extends State<CourseCard> {
           ),
           Expanded(
             child: Container(
-              margin: EdgeInsets.symmetric(vertical: 15),
+              margin: const EdgeInsets.symmetric(vertical: 15),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     widget.courseName,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                       letterSpacing: 1,
@@ -121,7 +121,7 @@ class _CourseCardState extends State<CourseCard> {
                         child: Text(
                           widget.courseTrainer,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             letterSpacing: 0,
                             color: Color(0xffA1A1A1),
@@ -134,14 +134,14 @@ class _CourseCardState extends State<CourseCard> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.access_time,
                               color: Color(0xffA1A1A1),
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Text(
                               '${widget.courseHours} ' + AppLocalizations.of(context)!.coursesScreen_hours,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 12,
                                 letterSpacing: 0,
                                 color: Color(0xffA1A1A1),
@@ -155,14 +155,14 @@ class _CourseCardState extends State<CourseCard> {
                   // SizedBox(height: 10),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.star,
                         color: Color(0xffFBB344),
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(
                         widget.courseRating,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           letterSpacing: 0,
                         ),

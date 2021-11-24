@@ -32,7 +32,7 @@ class OutBoardingContent extends StatelessWidget {
                     color: const Color(0xff373737),
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   subTitle,
                   style: TextStyle(

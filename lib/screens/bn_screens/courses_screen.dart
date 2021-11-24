@@ -1,7 +1,5 @@
 import 'package:elancer_project_1/widgets/course_card.dart';
-import 'package:elancer_project_1/widgets/work_staff_card.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CoursesScreen extends StatefulWidget {
